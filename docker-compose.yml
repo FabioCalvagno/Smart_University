@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  # Servizio Database PostgreSQL
+  postgres-db:
+    image: postgres:15-alpine
+    container_name: smart-university-db
+    ports:
+      - "5432:5432" # Espone la porta del database sul tuo PC
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: adminpassword
+      POSTGRES_DB: smart_university_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data # Mantiene i dati salvati anche se spegni Docker
+
+  # Servizio Message Broker RabbitMQ con pannello di controllo grafico
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: smart-university-rabbitmq
+    ports:
+      - "5672:5672"   # Porta di comunicazione per Spring Boot (AMQP)
+      - "15672:15672" # Porta per accedere alla console web di controllo
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+
+volumes:
+  postgres_data:
