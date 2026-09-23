@@ -2,10 +2,7 @@
 
 Progetto per l'insegnamento di **Ingegneria dei Sistemi Distribuiti**  
 **Corso di Laurea Magistrale in Informatica** - Università degli Studi di Catania  
-**Candidato:** Fabio Calvagno  
-**Docente:** Prof. Emiliano Tramontana  
-
----
+Fabio Santi Calvagno
 
 ## 📌 Descrizione del Progetto
 
