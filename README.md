@@ -1,200 +1,126 @@
+# 🎓 Smart University - Guida all'Avvio del Progetto
+
+Progetto per l'insegnamento di **Ingegneria dei Sistemi Distribuiti**  
+**Corso di Laurea Magistrale in Informatica** - Università degli Studi di Catania  
+**Candidato:** Fabio Calvagno  
+**Docente:** Prof. Emiliano Tramontana  
+
+---
+
+## 📌 Descrizione del Progetto
+
+**Smart University** è una piattaforma web distribuita a microservizi per la gestione delle carriere universitarie, dell'offerta formativa, degli appelli d'esame e della verbalizzazione dei voti.
+
+Il sistema si compone di 4 moduli Spring Boot indipendenti:
+* **`auth-service`** (Porta `8081`): Server di autenticazione e gestione credenziali.
+* **`student-service`** (Porta `8082`): Gestione anagrafica studenti e libretto universitario.
+* **`exam-service`** (Porta `8083`): Gestione insegnamenti, appelli, prenotazioni e verbalizzazioni.
+* **`web-portal`** (Porta `8080`): Interfaccia web utente (Spring Boot MVC + Thymeleaf).
+
+---
+
+## 🛠️ Prerequisiti di Ambiente
+
+Prima di avviare il progetto, assicurarsi che sul sistema siano installati:
+* **Java JDK 17** (o versione superiore)
+* **Apache Maven 3.8+**
+* **Docker Desktop / Docker Engine** (attivo in esecuzione)
+
+---
+
+## 🚀 1. Avvio dell'Infrastruttura Docker (PostgreSQL & RabbitMQ)
+
+Aprire il terminale ed eseguire i seguenti comandi per avviare il Database PostgreSQL e il Broker RabbitMQ con le credenziali e i parametri corrispondenti alle configurazioni del codice (`application.properties`):
+
+```bash
+# 1. Avvio container PostgreSQL (con creazione automatica dei DB: auth_db, student_db, exam_db)
+docker run -d `
+  --name postgres-db `
+  -p 5432:5432 `
+  -e POSTGRES_USER=admin `
+  -e POSTGRES_PASSWORD=adminpassword `
+  -e POSTGRES_MULTIPLE_DATABASES=auth_db,student_db,exam_db `
+  postgres:15
+
+# 2. Avvio container RabbitMQ (Message Broker per la verbalizzazione asincrona)
+docker run -d `
+  --name rabbitmq `
+  -p 5672:5672 `
+  -p 15672:15672 `
+  rabbitmq:3-management
 ```
 
-\# 🎓 Smart University - Sistema a Microservizi Distribuiti
+* **Pannello di Gestione RabbitMQ**: [http://localhost:15672](http://localhost:15672) (Utente: `guest` | Password: `guest`)
 
+---
 
+## 💻 2. Avvio Sequenziale dei Microservizi Spring Boot
 
-Progetto per l'esame di \*\*Ingegneria dei Sistemi Distribuiti\*\*  
+Aprire **4 terminali distinti** nelle cartelle dei rispettivi moduli ed avviarli nell'ordine indicato con il comando Maven:
 
-\*Corso di Laurea Magistrale in Informatica - Università degli Studi di Catania\*  
+```bash
+# Terminale 1: Auth Service (Porta 8081)
+cd auth-service
+mvn spring-boot:run
 
-\*\*Studente:\*\* Fabio Calvagno | \*\*Docente:\*\* Prof. Emiliano Tramontana
+# Terminale 2: Student Service (Porta 8082)
+cd student-service
+mvn spring-boot:run
 
+# Terminale 3: Exam Service (Porta 8083)
+cd exam-service
+mvn spring-boot:run
 
-
-\---
-
-
-
-\## 🏗️ Architettura del Sistema
-
-
-
-Il sistema gestisce i servizi universitari applicando un'architettura a \*\*Microservizi Spring Boot\*\* completamente disaccoppiati, con basi di dati PostgreSQL isolate per ciascun servizio (\*\*Database-per-Service\*\*).
-
-
-
-```mermaid
-
-graph TD
-
-&#x20;   subgraph Client Layer
-
-&#x20;       Browser\[Browser dell'Utente]
-
-&#x20;   end
-
-
-
-&#x20;   subgraph Presentation Layer
-
-&#x20;       Portal\[Web Portal - Port 8080\\nSpring Boot MVC + Thymeleaf]
-
-&#x20;   end
-
-
-
-&#x20;   subgraph Security \&amp; Authentication
-
-&#x20;       AuthService\[AuthService - Port 8081\\nSpring Boot + JWT + Scrypt]
-
-&#x20;       AuthDB\[(PostgreSQL: auth\_db)]
-
-&#x20;       AuthService --\&gt; AuthDB
-
-&#x20;   end
-
-
-
-&#x20;   subgraph Business Logic Microservices
-
-&#x20;       StudentService\[StudentService - Port 8082\\nAspectJ Cache + Listener]
-
-&#x20;       StudentDB\[(PostgreSQL: student\_db)]
-
-&#x20;       StudentService --\&gt; StudentDB
-
-
-
-&#x20;       ExamService\[ExamService - Port 8083\\nGrade Management]
-
-&#x20;       ExamDB\[(PostgreSQL: exam\_db)]
-
-&#x20;       ExamService --\&gt; ExamDB
-
-&#x20;   end
-
-
-
-&#x20;   subgraph Asynchronous Messaging
-
-&#x20;       RabbitMQ((RabbitMQ Broker\\nDirect Exchange: exam-exchange))
-
-&#x20;   end
-
-
-
-&#x20;   Browser --\&gt;|HTTP Cookies / HTML| Portal
-
-&#x20;   Portal --\&gt;|REST / Scrypt Auth| AuthService
-
-&#x20;   Portal --\&gt;|REST / Bearer JWT| StudentService
-
-&#x20;   Portal --\&gt;|REST / Bearer JWT| ExamService
-
-&#x20;   ExamService --\&gt;|Publish GradeEvent| RabbitMQ
-
-&#x20;   RabbitMQ --\&gt;|Consume GradeEvent| StudentService
-
-
-
+# Terminale 4: Web Portal (Porta 8080)
+cd web-portal
+mvn spring-boot:run
 ```
 
+---
 
+## 👤 3. Registrazione del Primo Utente Amministratore (`cURL`)
 
-\---
+Al primo avvio, il database PostgreSQL risulta privo di utenti. Prima di effettuare il login dall'interfaccia web, eseguire il seguente comando da terminale per registrare l'account **ADMIN** iniziale tramite le API REST di `auth-service`:
 
-
-
-\## 🛡️ Design Pattern Implementati
-
-
-
-| Requisito / Ambito          | Pattern Applicato                  | Dettaglio Implementativo                                                                 |
-
-| --------------------------- | ---------------------------------- | ---------------------------------------------------------------------------------------- |
-
-| \*\*Autenticazione\*\*          | \*\*Authenticator\*\* \&amp; \*\*Scrypt\*\*     | Centralizzazione login e hash lento password in AuthService.                             |
-
-| \*\*Credenziali\*\*             | \*\*Token (JWT)\*\*                    | Firma HMAC-256 contenente i ruoli del soggetto per verifiche stateless.                  |
-
-| \*\*Controllo Accessi\*\*       | \*\*Reference Monitor (PEP/PDP)\*\*    | JwtInterceptor nei microservizi con verifica firme e scadenze.                           |
-
-| \*\*Autorizzazione\*\*          | \*\*RBAC (Role-Based AC)\*\*           | Policy basate sui ruoli (ADMIN, DOCENTE, STUDENTE).                                      |
-
-| \*\*Session State\*\*           | \*\*Ibrido (Server \&amp; Client)\*\*       | HttpSession sul Web Portal; header Authorization: Bearer verso i backend.                |
-
-| \*\*Trasferimento Dati\*\*      | \*\*DTO\*\* \&amp; \*\*Remote Facade\*\*        | GradeDTO e GradeEvent per disaccoppiare la vista dalle entità JPA.                       |
-
-| \*\*Isolamento Dati\*\*         | \*\*Database-per-Service\*\*           | Basi di dati PostgreSQL separate (auth\\\_db, student\\\_db, exam\\\_db).                      |
-
-| \*\*Comunicazione Asincrona\*\* | \*\*Message Broker (AMQP)\*\*          | RabbitMQ per notificare e registrare i voti in modo disaccoppiato.                       |
-
-| \*\*Tolleranza Duplicati\*\*    | \*\*Idempotent Receiver\*\*            | Deduplicazione preventiva su DB (existsByStudentAndNomeInsegnamento).                    |
-
-| \*\*Resilienza Guasti\*\*       | \*\*Circuit Breaker\*\* \&amp; \*\*Fallback\*\* | Resilience4J in StudentWebController con degradazione controllata se un servizio cade.   |
-
-| \*\*Caching Trasversale\*\*     | \*\*AspectJ AOP\*\*                    | StudentGradeCacheAspect con advice @Around ed invalidazione reattiva su evento RabbitMQ. |
-
-
-
-\---
-
-
-
-\## ⚡ Guida all'Avvio Rapido
-
-
-
-\### 1\\. Prerequisiti
-
-
-
-\* \*\*Java 21 (JDK)\*\*
-
-\* \*\*PostgreSQL\*\* attivo con i database `auth\_db`, `student\_db`, `exam\_db`
-
-\* \*\*RabbitMQ Broker\*\* attivo sulla porta standard `5672`
-
-
-
-\### 2\\. Esecuzione dei Microservizi
-
-
-
-Aprire 4 terminali distinti ed avviare ciascun modulo tramite wrapper Maven:
-
-
-
+### PowerShell (Windows):
+```powershell
+curl.exe -X POST http://localhost:8081/api/auth/register `
+  -H "Content-Type: application/json" `
+  -d '{\"username\":\"admin\", \"password\":\"adminpassword\", \"role\":\"ADMIN\"}'
 ```
 
-\# Terminale 1: AuthService (Porta 8081)
-
-cd auth-service \&amp;\&amp; ./mvnw spring-boot:run
-
-
-
-\# Terminale 2: StudentService (Porta 8082)
-
-cd student-service \&amp;\&amp; ./mvnw spring-boot:run
-
-
-
-\# Terminale 3: ExamService (Porta 8083)
-
-cd exam-service \&amp;\&amp; ./mvnw spring-boot:run
-
-
-
-\# Terminale 4: WebPortal (Porta 8080)
-
-cd web-portal \&amp;\&amp; ./mvnw spring-boot:run
-
-
-
+### Bash / Linux / macOS:
+```bash
+curl -X POST http://localhost:8081/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{"username":"admin", "password":"adminpassword", "role":"ADMIN"}'
 ```
 
+Una volta registrato l'amministratore, collegarsi all'interfaccia web su **[http://localhost:8080/login](http://localhost:8080/login)**, accedere con le credenziali appena create (`admin` / `adminpassword`) e registrare i docenti e gli studenti dal pannello di amministrazione.
 
+---
 
-Accedere all'applicazione via browser su: \*\*http://localhost:8080/login\*\*
+## 🔑 Credenziali di Accesso
 
+| Ruolo | Username | Password | Creazione / Registrazione |
+| :--- | :--- | :--- | :--- |
+| **`ADMIN`** | `admin` | `adminpassword` | Creato via cURL (Sezione 3). |
+| **`DOCENTE`** | `docente1` | `docentepassword` | Registrato dal pannello `/admin/home` dall'Amministratore. |
+| **`STUDENTE`** | `studente1` | `studentepassword` | Registrato dal pannello `/admin/home` dall'Amministratore. |
+
+---
+
+## 📋 Guida Rapida ai Test delle Funzionalità
+
+### 👨‍💼 1. Pannello Amministratore (`/admin/home`)
+* **Registrazione**: Registrare nuovi utenti specificando ruolo (`DOCENTE` o `STUDENTE`) ed anagrafica.
+* **Crea Corso**: Attivare un insegnamento indicando codice, nome e username del docente responsabile (il sistema verifica che lo username appartenga ad un docente).
+
+### 👨‍🏫 2. Pannello Docente (`/docente/home`)
+* **Crea Appello**: Aprire un nuovo appello per un insegnamento assegnato.
+* **Verbalizza**: Registrarne il voto (18-30 e lode) per gli studenti prenotati.
+
+### 👨‍🎓 3. Portale Studente (`/student/home`)
+* **Prenotazione**: Selezionare un appello aperto ed effettuare la prenotazione.
+* **Annulla Prenotazione**: Rimuovere una prenotazione prima della chiusura dell'appello.
+* **Libretto**: Consultare l'elenco degli esami superati.
