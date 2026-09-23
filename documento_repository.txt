@@ -1,0 +1,4110 @@
+=== STRUTTURA DELLA CARTELLA ===
+
+📁 Repository Root/
+    📄 README.md
+    📄 documento_repository.txt
+    📄 .gitignore
+    📄 Documentazione.docx
+    📄 docker-compose.yml
+    📄 combina.py
+    📁 exam-service/
+        📄 .gitattributes
+        📄 .gitignore
+        📄 pom.xml
+        📄 mvnw
+        📄 mvnw.cmd
+        📁 src/
+            📁 main/
+                📁 resources/
+                    📄 application.properties
+                📁 java/
+                    📁 it/
+                        📁 unict/
+                            📁 smartuniversity/
+                                📁 examservice/
+                                    📄 ExamServiceApplication.java
+                                    📄 WebConfig.java
+                                    📁 repository/
+                                        📄 PrenotazioneRepository.java
+                                        📄 ExamCallRepository.java
+                                        📄 InsegnamentoRepository.java
+                                    📁 dto/
+                                        📄 GradeEvent.java
+                                    📁 config/
+                                        📄 RabbitMQConfig.java
+                                    📁 security/
+                                        📄 JwtInterceptor.java
+                                        📄 JwtValidator.java
+                                    📁 service/
+                                        📄 ExamService.java
+                                    📁 controller/
+                                        📄 ExamController.java
+                                    📁 model/
+                                        📄 Insegnamento.java
+                                        📄 Prenotazione.java
+                                        📄 ExamCall.java
+            📁 test/
+                📁 java/
+                    📁 it/
+                        📁 unict/
+                            📁 smartuniversity/
+                                📁 examservice/
+                                    📄 ExamServiceApplicationTests.java
+        📁 target/
+            📁 test-classes/
+                📁 it/
+                    📁 unict/
+                        📁 smartuniversity/
+                            📁 examservice/
+                                📄 ExamServiceApplicationTests.class
+            📁 maven-status/
+                📁 maven-compiler-plugin/
+                    📁 testCompile/
+                        📁 default-testCompile/
+                            📄 createdFiles.lst
+                            📄 inputFiles.lst
+                    📁 compile/
+                        📁 default-compile/
+                            📄 createdFiles.lst
+                            📄 inputFiles.lst
+            📁 generated-sources/
+                📁 annotations/
+            📁 generated-test-sources/
+                📁 test-annotations/
+            📁 classes/
+                📄 application.properties
+                📁 it/
+                    📁 unict/
+                        📁 smartuniversity/
+                            📁 examservice/
+                                📄 ExamServiceApplication.class
+                                📄 WebConfig.class
+                                📁 repository/
+                                    📄 PrenotazioneRepository.class
+                                    📄 InsegnamentoRepository.class
+                                    📄 ExamCallRepository.class
+                                📁 dto/
+                                    📄 GradeEvent.class
+                                📁 config/
+                                    📄 RabbitMQConfig.class
+                                📁 security/
+                                    📄 JwtInterceptor.class
+                                    📄 JwtValidator.class
+                                📁 service/
+                                    📄 ExamService.class
+                                📁 controller/
+                                    📄 ExamController.class
+                                📁 model/
+                                    📄 Prenotazione.class
+                                    📄 Insegnamento.class
+                                    📄 ExamCall.class
+                                    📄 Prenotazione$PrenotazioneBuilder.class
+        📁 .mvn/
+            📁 wrapper/
+                📄 maven-wrapper.properties
+    📁 web-portal/
+        📄 .gitattributes
+        📄 .gitignore
+        📄 pom.xml
+        📄 mvnw
+        📄 mvnw.cmd
+        📁 src/
+            📁 main/
+                📁 resources/
+                    📄 application.properties
+                    📁 templates/
+                        📄 login.html
+                        📄 docente-home.html
+                        📄 student-home.html
+                        📄 admin-home.html
+                📁 java/
+                    📁 it/
+                        📁 unict/
+                            📁 smartuniversity/
+                                📁 web_portal/
+                                    📄 WebPortalApplication.java
+                                    📁 dto/
+                                        📄 GradeDTO.java
+                                    📁 controller/
+                                        📄 AdminWebController.java
+                                        📄 DocenteWebController.java
+                                        📄 LoginController.java
+                                        📄 StudentWebController.java
+            📁 test/
+                📁 java/
+                    📁 it/
+                        📁 unict/
+                            📁 smartuniversity/
+                                📁 web_portal/
+                                    📄 WebPortalApplicationTests.java
+        📁 target/
+            📁 test-classes/
+                📁 it/
+                    📁 unict/
+                        📁 smartuniversity/
+                            📁 web_portal/
+                                📄 WebPortalApplicationTests.class
+            📁 maven-status/
+                📁 maven-compiler-plugin/
+                    📁 testCompile/
+                        📁 default-testCompile/
+                            📄 createdFiles.lst
+                            📄 inputFiles.lst
+                    📁 compile/
+                        📁 default-compile/
+                            📄 createdFiles.lst
+                            📄 inputFiles.lst
+            📁 generated-sources/
+                📁 annotations/
+            📁 generated-test-sources/
+                📁 test-annotations/
+            📁 classes/
+                📄 application.properties
+                📁 templates/
+                    📄 login.html
+                    📄 docente-home.html
+                    📄 student-home.html
+                    📄 admin-home.html
+                📁 it/
+                    📁 unict/
+                        📁 smartuniversity/
+                            📁 web_portal/
+                                📄 WebPortalApplication.class
+                                📁 dto/
+                                    📄 GradeDTO.class
+                                📁 controller/
+                                    📄 DocenteWebController$2.class
+                                    📄 StudentWebController.class
+                                    📄 StudentWebController$3.class
+                                    📄 StudentWebController$2.class
+                                    📄 AdminWebController.class
+                                    📄 DocenteWebController.class
+                                    📄 LoginController.class
+                                    📄 DocenteWebController$3.class
+                                    📄 DocenteWebController$1.class
+                                    📄 StudentWebController$1.class
+        📁 .mvn/
+            📁 wrapper/
+                📄 maven-wrapper.properties
+    📁 auth-service/
+        📄 .gitattributes
+        📄 .gitignore
+        📄 pom.xml
+        📄 mvnw
+        📄 mvnw.cmd
+        📁 src/
+            📁 main/
+                📁 resources/
+                    📄 application.properties
+                📁 java/
+                    📁 it/
+                        📁 unict/
+                            📁 smartuniversity/
+                                📁 auth_service/
+                                    📄 AuthServiceApplication.java
+                                    📁 repository/
+                                        📄 UserRepository.java
+                                    📁 service/
+                                        📄 AuthService.java
+                                        📄 JwtService.java
+                                    📁 controller/
+                                        📄 AuthController.java
+                                    📁 model/
+                                        📄 Role.java
+                                        📄 User.java
+            📁 test/
+                📁 java/
+                    📁 it/
+                        📁 unict/
+                            📁 smartuniversity/
+                                📁 auth_service/
+                                    📄 AuthServiceApplicationTests.java
+        📁 target/
+            📁 test-classes/
+                📁 it/
+                    📁 unict/
+                        📁 smartuniversity/
+                            📁 auth_service/
+                                📄 AuthServiceApplicationTests.class
+            📁 maven-status/
+                📁 maven-compiler-plugin/
+                    📁 testCompile/
+                        📁 default-testCompile/
+                            📄 createdFiles.lst
+                            📄 inputFiles.lst
+                    📁 compile/
+                        📁 default-compile/
+                            📄 createdFiles.lst
+                            📄 inputFiles.lst
+            📁 generated-sources/
+                📁 annotations/
+            📁 generated-test-sources/
+                📁 test-annotations/
+            📁 classes/
+                📄 application.properties
+                📁 it/
+                    📁 unict/
+                        📁 smartuniversity/
+                            📁 auth_service/
+                                📄 AuthServiceApplication.class
+                                📁 repository/
+                                    📄 UserRepository.class
+                                📁 service/
+                                    📄 AuthService.class
+                                    📄 JwtService.class
+                                📁 controller/
+                                    📄 AuthController.class
+                                📁 model/
+                                    📄 User.class
+                                    📄 Role.class
+        📁 .mvn/
+            📁 wrapper/
+                📄 maven-wrapper.properties
+    📁 student-service/
+        📄 .gitattributes
+        📄 .gitignore
+        📄 pom.xml
+        📄 mvnw
+        📄 mvnw.cmd
+        📁 src/
+            📁 main/
+                📁 resources/
+                    📄 application.properties
+                📁 java/
+                    📁 it/
+                        📁 unict/
+                            📁 smartuniversity/
+                                📁 student_service/
+                                    📄 StudentServiceApplication.java
+                                    📄 WebConfig.java
+                                    📁 listener/
+                                        📄 GradeListener.java
+                                    📁 repository/
+                                        📄 GradeRepository.java
+                                        📄 StudentRepository.java
+                                    📁 dto/
+                                        📄 GradeDTO.java
+                                        📄 GradeEvent.java
+                                    📁 config/
+                                        📄 RabbitMQConfig.java
+                                    📁 security/
+                                        📄 JwtInterceptor.java
+                                        📄 JwtValidator.java
+                                        📄 StudentGradeCacheAspect.java
+                                    📁 service/
+                                        📄 StudentService.java
+                                    📁 controller/
+                                        📄 StudentController.java
+                                    📁 model/
+                                        📄 Student.java
+                                        📄 Grade.java
+            📁 test/
+                📁 java/
+                    📁 it/
+                        📁 unict/
+                            📁 smartuniversity/
+                                📁 student_service/
+                                    📄 StudentServiceApplicationTests.java
+        📁 target/
+            📁 test-classes/
+                📁 it/
+                    📁 unict/
+                        📁 smartuniversity/
+                            📁 student_service/
+                                📄 StudentServiceApplicationTests.class
+            📁 maven-status/
+                📁 maven-compiler-plugin/
+                    📁 testCompile/
+                        📁 default-testCompile/
+                            📄 createdFiles.lst
+                            📄 inputFiles.lst
+                    📁 compile/
+                        📁 default-compile/
+                            📄 createdFiles.lst
+                            📄 inputFiles.lst
+            📁 generated-sources/
+                📁 annotations/
+            📁 generated-test-sources/
+                📁 test-annotations/
+            📁 classes/
+                📄 application.properties
+                📁 it/
+                    📁 unict/
+                        📁 smartuniversity/
+                            📁 student_service/
+                                📄 StudentServiceApplication.class
+                                📄 WebConfig.class
+                                📁 listener/
+                                    📄 GradeListener.class
+                                📁 repository/
+                                    📄 GradeRepository.class
+                                    📄 StudentRepository.class
+                                📁 dto/
+                                    📄 GradeEvent.class
+                                    📄 GradeDTO.class
+                                📁 config/
+                                    📄 RabbitMQConfig.class
+                                📁 security/
+                                    📄 JwtInterceptor.class
+                                    📄 StudentGradeCacheAspect.class
+                                    📄 JwtValidator.class
+                                📁 service/
+                                    📄 StudentService.class
+                                📁 controller/
+                                    📄 StudentController.class
+                                📁 model/
+                                    📄 Grade.class
+                                    📄 Student.class
+        📁 .mvn/
+            📁 wrapper/
+                📄 maven-wrapper.properties
+
+
+=== CONTENUTO DEI FILE ===
+
+
+============================================================
+FILE: exam-service/src/main/java/it/unict/smartuniversity/examservice/ExamServiceApplication.java
+============================================================
+
+package it.unict.smartuniversity.examservice;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ExamServiceApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ExamServiceApplication.class, args);
+	}
+
+}
+
+
+============================================================
+FILE: exam-service/src/main/java/it/unict/smartuniversity/examservice/WebConfig.java
+============================================================
+
+package it.unict.smartuniversity.examservice;
+
+import it.unict.smartuniversity.examservice.security.JwtInterceptor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+public class WebConfig implements WebMvcConfigurer {
+
+    @Autowired
+    private JwtInterceptor jwtInterceptor;
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        // Applica la sicurezza a tutti gli endpoint /api/
+        registry.addInterceptor(jwtInterceptor)
+                .addPathPatterns("/api/**");
+    }
+}
+
+============================================================
+FILE: exam-service/src/main/java/it/unict/smartuniversity/examservice/repository/PrenotazioneRepository.java
+============================================================
+
+package it.unict.smartuniversity.examservice.repository;
+
+import it.unict.smartuniversity.examservice.model.Prenotazione;
+import it.unict.smartuniversity.examservice.model.ExamCall;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Optional;
+
+@Repository
+public interface PrenotazioneRepository extends JpaRepository<Prenotazione, Long> {
+    List<Prenotazione> findByExamCall(ExamCall examCall);
+    List<Prenotazione> findByUsername(String username);
+    Optional<Prenotazione> findByExamCallAndMatricola(ExamCall examCall, String matricola);
+    List<Prenotazione> findByExamCallInAndVerbalizzataFalse(List<ExamCall> examCalls);
+}
+
+
+============================================================
+FILE: exam-service/src/main/java/it/unict/smartuniversity/examservice/repository/ExamCallRepository.java
+============================================================
+
+package it.unict.smartuniversity.examservice.repository;
+
+import it.unict.smartuniversity.examservice.model.ExamCall;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import java.util.List;
+
+@Repository
+public interface ExamCallRepository extends JpaRepository<ExamCall, Long> {
+    // Trova tutti gli appelli d'esame associati a uno specifico docente
+    List<ExamCall> findByDocente(String docente);
+}
+
+============================================================
+FILE: exam-service/src/main/java/it/unict/smartuniversity/examservice/repository/InsegnamentoRepository.java
+============================================================
+
+package it.unict.smartuniversity.examservice.repository;
+
+import it.unict.smartuniversity.examservice.model.Insegnamento;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import java.util.List;
+import java.util.Optional;
+
+@Repository
+public interface InsegnamentoRepository extends JpaRepository<Insegnamento, Long> {
+    Optional<Insegnamento> findByCodice(String codice);
+    List<Insegnamento> findByDocente(String docente);
+}
+
+============================================================
+FILE: exam-service/src/main/java/it/unict/smartuniversity/examservice/dto/GradeEvent.java
+============================================================
+
+package it.unict.smartuniversity.examservice.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.io.Serializable;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class GradeEvent implements Serializable {
+    
+    private String matricola;        // Identificativo unico dello studente
+    private String nomeInsegnamento; // Nome dell'esame verbalizzato (es. "Ingegneria dei Sistemi Distribuiti")
+    private int voto;                // Voto finale (es. 18-30)
+    private boolean lode;            // Se presente la lode (voto = 30)
+    private String docente;          // Username del docente che ha firmato il verbale
+}
+
+============================================================
+FILE: exam-service/src/main/java/it/unict/smartuniversity/examservice/config/RabbitMQConfig.java
+============================================================
+
+package it.unict.smartuniversity.examservice.config;
+
+import org.springframework.amqp.core.*;
+import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
+import org.springframework.amqp.support.converter.MessageConverter;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class RabbitMQConfig {
+
+    // Nomi dei componenti fisici su RabbitMQ
+    public static final String EXCHANGE_NAME = "exam-exchange";
+    public static final String QUEUE_NAME = "student-grade-queue";
+    public static final String ROUTING_KEY = "exam.grade.recorded";
+
+    // 1. Dichiarazione dello Scambio Diretto (Direct Exchange)
+    @Bean
+    public DirectExchange examExchange() {
+        return new DirectExchange(EXCHANGE_NAME, true, false); // durable, autoDelete
+    }
+
+    // 2. Dichiarazione della Coda che riceverà i voti da registrare
+    @Bean
+    public Queue studentGradeQueue() {
+        return new Queue(QUEUE_NAME, true); // durable (sopravvive ai crash del broker)
+    }
+
+    // 3. Creazione del collegamento (Binding) tra Coda ed Exchange tramite Routing Key
+    @Bean
+    public Binding binding(Queue studentGradeQueue, DirectExchange examExchange) {
+        return BindingBuilder
+                .bind(studentGradeQueue)
+                .to(examExchange)
+                .with(ROUTING_KEY);
+    }
+
+    // 4. Configurazione del serializzatore JSON.
+    // Di default Spring AMQP userebbe la serializzazione nativa di Java (sconsigliata).
+    // Con questo bean, i nostri messaggi viaggeranno su RabbitMQ formattati in JSON.
+    @Bean
+    public MessageConverter jsonMessageConverter() {
+        return new Jackson2JsonMessageConverter();
+    }
+}
+
+============================================================
+FILE: exam-service/src/main/java/it/unict/smartuniversity/examservice/security/JwtInterceptor.java
+============================================================
+
+package it.unict.smartuniversity.examservice.security;
+
+import com.auth0.jwt.interfaces.DecodedJWT;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.HandlerInterceptor;
+
+@Component
+public class JwtInterceptor implements HandlerInterceptor {
+
+    @Autowired
+    private JwtValidator jwtValidator;
+
+    @Override
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        if ("OPTIONS".equalsIgnoreCase(request.getMethod())) {
+            return true;
+        }
+
+        String authHeader = request.getHeader("Authorization");
+        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            response.getWriter().write("{\"error\": \"Token mancante o non valido! Richiesto Bearer Token.\"}");
+            response.setContentType("application/json");
+            return false;
+        }
+
+        String token = authHeader.substring(7);
+        try {
+            DecodedJWT jwt = jwtValidator.validateAndDecode(token);
+            request.setAttribute("username", jwt.getSubject());
+            request.setAttribute("role", jwt.getClaim("role").asString());
+            return true;
+        } catch (Exception e) {
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            response.getWriter().write("{\"error\": \"Token non valido o scaduto: " + e.getMessage() + "\"}");
+            response.setContentType("application/json");
+            return false;
+        }
+    }
+}
+
+============================================================
+FILE: exam-service/src/main/java/it/unict/smartuniversity/examservice/security/JwtValidator.java
+============================================================
+
+package it.unict.smartuniversity.examservice.security;
+
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.algorithms.Algorithm;
+import com.auth0.jwt.interfaces.DecodedJWT;
+import com.auth0.jwt.interfaces.JWTVerifier;
+import org.springframework.stereotype.Component;
+
+@Component
+public class JwtValidator {
+    private static final String SECRET_KEY = "SmartUniversitySuperSecretKeyForJWT";
+    private static final String ISSUER = "auth-service";
+    private final Algorithm algorithm = Algorithm.HMAC256(SECRET_KEY);
+
+    public DecodedJWT validateAndDecode(String token) {
+        JWTVerifier verifier = JWT.require(algorithm)
+                .withIssuer(ISSUER)
+                .build();
+        return verifier.verify(token);
+    }
+}
+
+============================================================
+FILE: exam-service/src/main/java/it/unict/smartuniversity/examservice/service/ExamService.java
+============================================================
+
+package it.unict.smartuniversity.examservice.service;
+
+import it.unict.smartuniversity.examservice.config.RabbitMQConfig;
+import it.unict.smartuniversity.examservice.dto.GradeEvent;
+import it.unict.smartuniversity.examservice.model.ExamCall;
+import it.unict.smartuniversity.examservice.model.Insegnamento;
+import it.unict.smartuniversity.examservice.model.Prenotazione;
+import it.unict.smartuniversity.examservice.repository.ExamCallRepository;
+import it.unict.smartuniversity.examservice.repository.InsegnamentoRepository;
+import it.unict.smartuniversity.examservice.repository.PrenotazioneRepository;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.time.LocalDate;
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+public class ExamService {
+
+    @Autowired
+    private InsegnamentoRepository insegnamentoRepository;
+
+    @Autowired
+    private ExamCallRepository examCallRepository;
+
+    @Autowired
+    private PrenotazioneRepository prenotazioneRepository;
+
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
+
+    // --- INSEGNAMENTI ---
+    public Insegnamento createInsegnamento(Insegnamento insegnamento) {
+        if (insegnamentoRepository.findByCodice(insegnamento.getCodice()).isPresent()) {
+            throw new RuntimeException("Insegnamento con questo codice già esistente!");
+        }
+        return insegnamentoRepository.save(insegnamento);
+    }
+
+    public List<Insegnamento> getAllInsegnamenti() {
+        return insegnamentoRepository.findAll();
+    }
+
+    public List<Insegnamento> getInsegnamentiByDocente(String docente) {
+        return insegnamentoRepository.findByDocente(docente);
+    }
+
+    // --- APPELLI ---
+    public ExamCall createExamCall(Long insegnamentoId, LocalDate dataEsame, String loggedInUsername) {
+        Insegnamento insegnamento = insegnamentoRepository.findById(insegnamentoId)
+                .orElseThrow(() -> new RuntimeException("Insegnamento non trovato (ID: " + insegnamentoId + ")"));
+
+        String docenteInsegnamento = insegnamento.getDocente();
+        if (docenteInsegnamento != null && !docenteInsegnamento.equalsIgnoreCase(loggedInUsername) && !"admin".equalsIgnoreCase(loggedInUsername)) {
+            throw new RuntimeException("Non sei autorizzato a creare appelli per questa materia!");
+        }
+
+        ExamCall call = new ExamCall();
+        call.setInsegnamento(insegnamento);
+        call.setDataEsame(dataEsame);
+        call.setDocente(loggedInUsername);
+        call.setChiuso(false);
+
+        return examCallRepository.save(call);
+    }
+
+    public List<ExamCall> getAllExamCalls() {
+        return examCallRepository.findAll();
+    }
+
+    public ExamCall closeExamCall(Long callId, String loggedInUsername) {
+        ExamCall call = examCallRepository.findById(callId)
+                .orElseThrow(() -> new RuntimeException("Appello non trovato!"));
+        call.setChiuso(true);
+        return examCallRepository.save(call);
+    }
+
+    // --- PRENOTAZIONI ---
+    public Prenotazione bookExamCall(Long callId, String matricola, String username) {
+    ExamCall call = examCallRepository.findById(callId)
+            .orElseThrow(() -> new RuntimeException("Appello d'esame non trovato!"));
+
+    if (call.isChiuso()) {
+        throw new RuntimeException("Impossibile prenotarsi: le iscrizioni per questo appello sono state chiuse dal docente!");
+    }
+
+    if (prenotazioneRepository.findByExamCallAndMatricola(call, matricola).isPresent()) {
+        throw new RuntimeException("Risulti già prenotato a questo specifico appello!");
+    }
+
+    // CORREZIONE: Verifica se c'è una prenotazione PENDENTE (non ancora verbalizzata) per la stessa materia
+    List<Prenotazione> userBookings = prenotazioneRepository.findByUsername(username);
+    boolean prenotazionePendente = userBookings.stream()
+            .filter(b -> !b.isVerbalizzata()) // Considera solo le prenotazioni attive
+            .anyMatch(b -> b.getExamCall().getInsegnamento().getId().equals(call.getInsegnamento().getId()));
+
+    if (prenotazionePendente) {
+        throw new RuntimeException("Sei già prenotato a un appello attivo per l'insegnamento '" 
+                + call.getInsegnamento().getNome() + "'. Cancella la precedente prenotazione prima di sceglierne un'altra!");
+    }
+
+    Prenotazione prenotazione = new Prenotazione();
+    prenotazione.setExamCall(call);
+    prenotazione.setMatricola(matricola);
+    prenotazione.setUsername(username);
+    prenotazione.setStato("ATTESA_VERBALIZZAZIONE");
+
+    return prenotazioneRepository.save(prenotazione);
+}
+
+
+    public List<Prenotazione> getBookingsByUsername(String username) {
+        return prenotazioneRepository.findByUsername(username);
+    }
+
+    public List<Prenotazione> getBookingsByCallId(Long callId) {
+        ExamCall call = examCallRepository.findById(callId)
+                .orElseThrow(() -> new RuntimeException("Appello d'esame non trovato!"));
+        return prenotazioneRepository.findByExamCall(call);
+    }
+
+    /**
+     * Restituisce unicamente le prenotazioni attive e NON ancora verbalizzate per i corsi del docente
+     */
+    public List<Prenotazione> getPendingBookingsForDocente(String docenteUsername) {
+        return prenotazioneRepository.findAll().stream()
+                .filter(p -> !p.isVerbalizzata())
+                .filter(p -> p.getExamCall() != null 
+                        && p.getExamCall().getInsegnamento() != null 
+                        && p.getExamCall().getDocente() != null 
+                        && (p.getExamCall().getDocente().equalsIgnoreCase(docenteUsername) || "admin".equalsIgnoreCase(docenteUsername)))
+                .collect(Collectors.toList());
+    }
+
+    public void cancelBooking(Long bookingId, String username) {
+    Prenotazione prenotazione = prenotazioneRepository.findById(bookingId)
+            .orElseThrow(() -> new RuntimeException("Prenotazione non trovata!"));
+
+    if (!prenotazione.getUsername().equalsIgnoreCase(username)) {
+        throw new RuntimeException("Non sei autorizzato a cancellare questa prenotazione!");
+    }
+
+    if (prenotazione.getExamCall().isChiuso()) {
+        throw new RuntimeException("Impossibile cancellare: le iscrizioni a questo appello sono state chiuse dal docente!");
+    }
+
+    prenotazioneRepository.delete(prenotazione);
+    }
+
+    // --- VERBALIZZAZIONE (RabbitMQ) ---
+    @Transactional
+public void recordGrade(Long bookingId, Integer voto, Boolean lode, String docenteUsername) {
+    Prenotazione booking = prenotazioneRepository.findById(bookingId)
+            .orElseThrow(() -> new RuntimeException("Prenotazione non trovata (ID: " + bookingId + ")"));
+
+    if (booking.isVerbalizzata()) {
+        throw new RuntimeException("Questa prenotazione è già stata verbalizzata in precedenza!");
+    }
+
+    boolean promosso = (voto != null && voto >= 18);
+    
+    // CORREZIONE: Aggiorna sia il flag 'verbalizzata' che lo 'stato'
+    booking.setVerbalizzata(true);
+    booking.setStato(promosso ? "VERBALIZZATO" : "RIMANDATO");
+    prenotazioneRepository.save(booking);
+
+    GradeEvent gradeEvent = new GradeEvent();
+    gradeEvent.setMatricola(booking.getMatricola());
+    gradeEvent.setNomeInsegnamento(booking.getExamCall().getInsegnamento().getNome());
+    gradeEvent.setVoto(promosso ? voto : 0);
+    gradeEvent.setLode(promosso && voto == 30 && Boolean.TRUE.equals(lode));
+    gradeEvent.setDocente(docenteUsername);
+
+    System.out.println("====== PRODUCER: Verbalizzazione esame (" + (promosso ? voto : "RIMANDATO") + ") per matricola: " + booking.getMatricola() + " ======");
+
+    rabbitTemplate.convertAndSend(
+            RabbitMQConfig.EXCHANGE_NAME,
+            RabbitMQConfig.ROUTING_KEY,
+            gradeEvent
+    );
+}
+
+
+}
+
+
+============================================================
+FILE: exam-service/src/main/java/it/unict/smartuniversity/examservice/controller/ExamController.java
+============================================================
+
+package it.unict.smartuniversity.examservice.controller;
+
+import it.unict.smartuniversity.examservice.model.ExamCall;
+import it.unict.smartuniversity.examservice.model.Insegnamento;
+import it.unict.smartuniversity.examservice.model.Prenotazione;
+import it.unict.smartuniversity.examservice.service.ExamService;
+import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDate;
+import java.util.Map;
+
+@RestController
+@RequestMapping("/api/exams")
+public class ExamController {
+
+    @Autowired
+    private ExamService examService;
+
+    // --- INSEGNAMENTI ---
+    @PostMapping("/courses")
+    public ResponseEntity<?> createInsegnamento(@RequestBody Insegnamento insegnamento, HttpServletRequest request) {
+        String role = (String) request.getAttribute("role");
+        if (!"ADMIN".equalsIgnoreCase(role)) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                    .body(Map.of("error", "Accesso negato! Solo gli amministratori possono inserire insegnamenti."));
+        }
+        try {
+            Insegnamento created = examService.createInsegnamento(insegnamento);
+            return ResponseEntity.status(HttpStatus.CREATED).body(created);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
+        }
+    }
+
+    @GetMapping("/courses")
+    public ResponseEntity<?> getAllCourses() {
+        return ResponseEntity.ok(examService.getAllInsegnamenti());
+    }
+
+    @GetMapping("/courses/my")
+    public ResponseEntity<?> getMyCourses(HttpServletRequest request) {
+        String username = (String) request.getAttribute("username");
+        return ResponseEntity.ok(examService.getInsegnamentiByDocente(username));
+    }
+
+    // --- APPELLI ---
+    @PostMapping("/calls")
+    public ResponseEntity<?> createExamCall(@RequestBody Map<String, Object> payload, HttpServletRequest request) {
+        String role = (String) request.getAttribute("role");
+        String username = (String) request.getAttribute("username");
+
+        if (!"DOCENTE".equalsIgnoreCase(role)) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                    .body(Map.of("error", "Accesso negato! Solo i docenti possono creare appelli d'esame."));
+        }
+
+        try {
+            Long insegnamentoId = null;
+            if (payload.get("insegnamentoId") != null) {
+                insegnamentoId = Long.valueOf(payload.get("insegnamentoId").toString());
+            }
+
+            String dataEsameStr = (String) payload.get("dataEsame");
+            if (insegnamentoId == null || dataEsameStr == null) {
+                return ResponseEntity.badRequest()
+                        .body(Map.of("error", "Parametri mancanti: insegnamentoId o dataEsame"));
+            }
+
+            LocalDate dataEsame = LocalDate.parse(dataEsameStr);
+            ExamCall created = examService.createExamCall(insegnamentoId, dataEsame, username);
+            return ResponseEntity.status(HttpStatus.CREATED).body(created);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
+        }
+    }
+
+    @GetMapping("/calls")
+    public ResponseEntity<?> getAllCalls() {
+        return ResponseEntity.ok(examService.getAllExamCalls());
+    }
+
+    @PostMapping("/calls/{id}/close")
+    public ResponseEntity<?> closeExamCall(@PathVariable("id") Long callId, HttpServletRequest request) {
+        String role = (String) request.getAttribute("role");
+        String username = (String) request.getAttribute("username");
+
+        if (!"DOCENTE".equalsIgnoreCase(role) && !"ADMIN".equalsIgnoreCase(role)) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(Map.of("error", "Accesso negato!"));
+        }
+
+        try {
+            ExamCall closedCall = examService.closeExamCall(callId, username);
+            return ResponseEntity.ok(closedCall);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
+        }
+    }
+
+    // --- PRENOTAZIONI ---
+    @PostMapping("/calls/{id}/book")
+    public ResponseEntity<?> bookExamCall(@PathVariable("id") Long callId, HttpServletRequest request) {
+        String role = (String) request.getAttribute("role");
+        String username = (String) request.getAttribute("username");
+
+        // Legge l'header X-Student-Matricola con fallback su parametro query
+        String matricola = request.getHeader("X-Student-Matricola");
+        if (matricola == null || matricola.isBlank()) {
+            matricola = request.getParameter("matricola");
+        }
+
+        if (!"STUDENTE".equalsIgnoreCase(role)) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                    .body(Map.of("error", "Accesso riservato agli studenti!"));
+        }
+
+        try {
+            Prenotazione prenotazione = examService.bookExamCall(callId, matricola, username);
+            return ResponseEntity.status(HttpStatus.CREATED).body(prenotazione);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
+        }
+    }
+
+    @GetMapping("/docente/pending-bookings")
+    public ResponseEntity<?> getPendingBookings(HttpServletRequest request) {
+        String role = (String) request.getAttribute("role");
+        String username = (String) request.getAttribute("username");
+
+        if (!"DOCENTE".equalsIgnoreCase(role) && !"ADMIN".equalsIgnoreCase(role)) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(Map.of("error", "Accesso negato!"));
+        }
+        return ResponseEntity.ok(examService.getPendingBookingsForDocente(username));
+    }
+
+    @GetMapping("/my-bookings")
+    public ResponseEntity<?> getMyBookings(HttpServletRequest request) {
+        String username = (String) request.getAttribute("username");
+        return ResponseEntity.ok(examService.getBookingsByUsername(username));
+    }
+
+    // --- VERBALIZZAZIONE ---
+    @PostMapping("/grades")
+    public ResponseEntity<?> recordGrade(@RequestBody Map<String, Object> payload, HttpServletRequest request) {
+        String role = (String) request.getAttribute("role");
+        String username = (String) request.getAttribute("username");
+
+        if (!"DOCENTE".equalsIgnoreCase(role)) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                    .body(Map.of("error", "Accesso negato! Solo i docenti possono verbalizzare i voti."));
+        }
+
+        try {
+            if (payload.get("bookingId") == null) {
+                return ResponseEntity.badRequest().body(Map.of("error", "Parametro 'bookingId' mancante."));
+            }
+
+            Long bookingId = Long.valueOf(payload.get("bookingId").toString());
+            String esito = payload.get("esito") != null ? payload.get("esito").toString() : "PROMOSSO";
+
+            Integer voto = 0;
+            Boolean lode = false;
+
+            if ("PROMOSSO".equalsIgnoreCase(esito)) {
+                if (payload.get("voto") == null) {
+                    return ResponseEntity.badRequest()
+                            .body(Map.of("error", "Selezionare un voto valido per la promozione."));
+                }
+                voto = Integer.valueOf(payload.get("voto").toString());
+                if (voto < 18 || voto > 30) {
+                    return ResponseEntity.badRequest()
+                            .body(Map.of("error", "Il voto di promozione deve essere compreso tra 18 e 30."));
+                }
+                if (payload.get("lode") != null) {
+                    lode = Boolean.valueOf(payload.get("lode").toString());
+                }
+            }
+
+            examService.recordGrade(bookingId, voto, lode, username);
+            return ResponseEntity
+                    .ok(Map.of("message", "Verbalizzazione registrata ed inviata a RabbitMQ con successo!"));
+
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
+        }
+    }
+
+    @PostMapping("/bookings/{id}/cancel")
+    public ResponseEntity<?> cancelBooking(@PathVariable("id") Long bookingId, HttpServletRequest request) {
+        String role = (String) request.getAttribute("role");
+        String username = (String) request.getAttribute("username");
+
+        if (!"STUDENTE".equalsIgnoreCase(role)) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                    .body(Map.of("error", "Accesso riservato agli studenti!"));
+        }
+
+        try {
+            examService.cancelBooking(bookingId, username);
+            return ResponseEntity.ok(Map.of("message", "Prenotazione annullata con successo!"));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
+        }
+    }
+
+}
+
+
+============================================================
+FILE: exam-service/src/main/java/it/unict/smartuniversity/examservice/model/Insegnamento.java
+============================================================
+
+package it.unict.smartuniversity.examservice.model;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+
+@Entity
+@Table(name = "insegnamenti")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Insegnamento {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false, unique = true)
+    private String codice; // es. INF-01
+
+    @Column(nullable = false)
+    private String nome; // es. Ingegneria dei Sistemi Distribuiti
+
+    @Column(nullable = false)
+    private String docente; // Username del docente responsabile (es. prof.tramontana)
+}
+
+============================================================
+FILE: exam-service/src/main/java/it/unict/smartuniversity/examservice/model/Prenotazione.java
+============================================================
+
+package it.unict.smartuniversity.examservice.model;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Table(name = "prenotazioni", uniqueConstraints = {
+    @UniqueConstraint(columnNames = {"exam_call_id", "matricola"})
+})
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Prenotazione {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "exam_call_id", nullable = false)
+    @JsonIgnoreProperties("prenotazioni") // <-- EVITA IL LOOP INFINITO DI SERIALIZZAZIONE JSON (FIX ERRORE 500)
+    private ExamCall examCall;
+
+    @Column(nullable = false)
+    private String matricola;
+
+    @Column(nullable = false)
+    private String username;
+
+    @Builder.Default
+    @Column(nullable = false)
+    private boolean verbalizzata = false;
+
+    @Builder.Default
+    @Column(nullable = false)
+    private String stato = "ATTESA_VERBALIZZAZIONE"; // Valori possibili: ATTESA_VERBALIZZAZIONE, RIMANDATO, VERBALIZZATO
+}
+
+
+============================================================
+FILE: exam-service/src/main/java/it/unict/smartuniversity/examservice/model/ExamCall.java
+============================================================
+
+package it.unict.smartuniversity.examservice.model;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
+import java.time.LocalDate;
+
+@Entity
+@Table(name = "exam_calls")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class ExamCall {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "insegnamento_id", nullable = false)
+    private Insegnamento insegnamento; // L'appello fa riferimento a un insegnamento inserito dall'Admin
+
+    @Column(nullable = false)
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private LocalDate dataEsame; // Formattazione corretta per la deserializzazione JSON
+
+    @Column(nullable = false)
+    private String docente; // Username del docente che tiene l'esame
+
+    @Column(nullable = false)
+    private boolean chiuso = false; // Flag per la chiusura dell'appello da parte del docente
+}
+
+
+============================================================
+FILE: exam-service/src/test/java/it/unict/smartuniversity/examservice/ExamServiceApplicationTests.java
+============================================================
+
+package it.unict.smartuniversity.examservice;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class ExamServiceApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
+
+
+============================================================
+FILE: web-portal/src/main/resources/templates/login.html
+============================================================
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart University - Accedi</title>
+    <!-- Bootstrap CSS per una grafica moderna e accattivante -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/tailwind.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0d6efd 0%, #001233 100%);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        .btn-primary {
+            border-radius: 8px;
+            padding: 10px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card p-4">
+                <div class="card-body">
+                    <h2 class="text-center mb-4 text-primary fw-bold">Smart University</h2>
+                    <h5 class="text-center text-muted mb-4">Accedi al Portale</h5>
+
+                    <!-- Messaggio di errore dinamico in caso di credenziali errate -->
+                    <div th:if="${error}" class="alert alert-danger" role="alert" th:text="${error}">
+                        Errore generico di login.
+                    </div>
+
+                    <!-- Messaggio di avviso in caso di disconnessione -->
+                    <div th:if="${message}" class="alert alert-info" role="alert" th:text="${message}">
+                        Messaggio informativo.
+                    </div>
+
+                    <form th:action="@{/login}" method="post">
+                        <div class="mb-3">
+                            <label for="username" class="form-label fw-semibold">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="es. mario.rossi" required autocomplete="username">
+                        </div>
+                        <div class="mb-4">
+                            <label for="password" class="form-label fw-semibold">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="••••••••" required autocomplete="current-password">
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-block">Accedi</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <p class="text-center text-white-50 mt-4">&copy; 2026 Università degli Studi di Catania</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+============================================================
+FILE: web-portal/src/main/resources/templates/docente-home.html
+============================================================
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart University - Portale Docente</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8f9fa; }
+        .navbar-custom { background-color: #0d6efd; }
+        .card-custom { border: none; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom mb-4">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">🎓 Smart University</a>
+            <div class="d-flex align-items-center text-white">
+                <span class="me-3">Benvenuto, Prof. <strong th:text="${username}">Docente</strong></span>
+                <span class="badge bg-light text-primary me-3 fs-6">Ruolo: DOCENTE</span>
+                <a th:href="@{/logout}" class="btn btn-outline-light btn-sm fw-semibold">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div th:if="${success}" class="alert alert-success alert-dismissible fade show card-custom mb-4" role="alert">
+                    <span th:text="${success}">Operazione completata!</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <div th:if="${error}" class="alert alert-danger alert-dismissible fade show card-custom mb-4" role="alert">
+                    <span th:text="${error}">Si è verificato un errore.</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Programmazione Appelli d'Esame -->
+            <div class="col-md-5 mb-4">
+                <div class="card card-custom p-4">
+                    <h4 class="text-primary fw-bold mb-3">Pianifica Appello d'Esame</h4>
+                    <p class="text-muted small">Crea una sessione d'appello d'esame per i tuoi corsi.</p>
+                    <hr>
+
+                    <form th:action="@{/docente/create-call}" method="post">
+                        <div class="mb-3">
+                            <label for="insegnamentoId" class="form-label fw-semibold">Insegnamento</label>
+                            <select class="form-select" id="insegnamentoId" name="insegnamentoId" required>
+                                <option th:each="course : ${courses}" th:value="${course.id}" th:text="${course.codice + ' - ' + course.nome}"></option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="dataEsame" class="form-label fw-semibold">Data Esame</label>
+                            <input type="date" class="form-control" id="dataEsame" name="dataEsame" required>
+                        </div>
+                        <div class="d-grid gap-2 mt-4">
+                            <button type="submit" class="btn btn-primary fw-semibold">Crea e Pubblica Appello</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Registro Appelli Programmati -->
+            <div class="col-md-7 mb-4">
+                <div class="card card-custom p-4">
+                    <h4 class="text-dark fw-bold mb-3">I Tuoi Appelli Programmati</h4>
+                    <p class="text-muted small">Gestisci lo stato degli appelli ufficiali.</p>
+                    <hr>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Insegnamento</th>
+                                    <th>Data Esame</th>
+                                    <th>Stato</th>
+                                    <th class="text-center">Azione</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:if="${#lists.isEmpty(appelli)}">
+                                    <td colspan="4" class="text-center text-muted py-3">Nessun appello creato.</td>
+                                </tr>
+                                <tr th:each="call : ${appelli}">
+                                    <td class="fw-semibold text-dark" th:text="${call.insegnamento.nome}">Materia</td>
+                                    <td th:text="${call.dataEsame}">Data</td>
+                                    <td>
+                                        <span th:if="${call.chiuso}" class="badge bg-secondary px-2 py-1">Chiuso</span>
+                                        <span th:if="${!call.chiuso}" class="badge bg-success px-2 py-1">Aperto</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <form th:if="${!call.chiuso}" th:action="@{/docente/close-call}" method="post" style="display:inline;">
+                                            <input type="hidden" name="callId" th:value="${call.id}">
+                                            <button type="submit" class="btn btn-warning btn-sm fw-semibold">Chiudi Appello</button>
+                                        </form>
+                                        <span th:if="${call.chiuso}" class="text-muted small italic">Iscrizioni Chiuse</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sezione Verbalizzazione Guidata (Solo Studenti Prenotati) -->
+        <div class="row">
+            <div class="col-12 mb-4">
+                <div class="card card-custom p-4">
+                    <h4 class="text-success fw-bold mb-3">Verbalizzazione Esami (Studenti Prenotati)</h4>
+                    <p class="text-muted small">Seleziona l'esito per ciascun candidato iscritto agli appelli ufficiali.</p>
+                    <hr>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Matricola Studente</th>
+                                    <th>Insegnamento</th>
+                                    <th>Data Appello</th>
+                                    <th class="text-center">Azione Verbalizzazione</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:if="${#lists.isEmpty(pendingBookings)}">
+                                    <td colspan="4" class="text-center text-muted py-4">Nessuna prenotazione pendente da verbalizzare.</td>
+                                </tr>
+                                <tr th:each="b : ${pendingBookings}">
+                                    <td class="fw-bold text-primary" th:text="${b.matricola}">M81001234</td>
+                                    <td class="fw-semibold" th:text="${b.examCall.insegnamento.nome}">Materia</td>
+                                    <td th:text="${b.examCall.dataEsame}">Data</td>
+                                    <td>
+                                        <form th:action="@{/docente/verbalizza}" method="post" class="d-flex align-items-center justify-content-center gap-2">
+                                            <input type="hidden" name="bookingId" th:value="${b.id}">
+
+                                            <select name="esito" class="form-select form-select-sm w-auto" 
+                                                    th:id="'esitoSelect-' + ${b.id}" 
+                                                    th:onchange="'toggleGradeInputs(' + ${b.id} + ')'" required>
+                                                <option value="PROMOSSO" selected>Promosso</option>
+                                                <option value="RIMANDATO">Rimandato</option>
+                                            </select>
+
+                                            <input type="number" name="voto" class="form-control form-control-sm" style="width: 80px;" 
+                                                   th:id="'votoInput-' + ${b.id}" min="18" max="30" value="18" 
+                                                   th:onchange="'toggleLodeCheckbox(' + ${b.id} + ')'" required>
+
+                                            <div class="form-check me-2" th:id="'lodeBox-' + ${b.id}">
+                                                <input class="form-check-input" type="checkbox" name="lode" value="true" th:id="'lodeCheck-' + ${b.id}" disabled>
+                                                <label class="form-check-label small" th:for="'lodeCheck-' + ${b.id}">Lode</label>
+                                            </div>
+
+                                            <button type="submit" class="btn btn-success btn-sm fw-semibold">Verbalizza</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    function toggleGradeInputs(id) {
+        const esito = document.getElementById('esitoSelect-' + id).value;
+        const votoInput = document.getElementById('votoInput-' + id);
+        const lodeCheck = document.getElementById('lodeCheck-' + id);
+
+        if (esito === 'RIMANDATO') {
+            votoInput.value = '';
+            votoInput.disabled = true;
+            votoInput.required = false;
+            lodeCheck.checked = false;
+            lodeCheck.disabled = true;
+        } else {
+            votoInput.disabled = false;
+            votoInput.required = true;
+            votoInput.value = '18';
+            toggleLodeCheckbox(id);
+        }
+    }
+
+    function toggleLodeCheckbox(id) {
+        const votoInput = document.getElementById('votoInput-' + id);
+        const lodeCheck = document.getElementById('lodeCheck-' + id);
+        if (parseInt(votoInput.value) === 30) {
+            lodeCheck.disabled = false;
+        } else {
+            lodeCheck.checked = false;
+            lodeCheck.disabled = true;
+        }
+    }
+    </script>
+</body>
+</html>
+
+
+============================================================
+FILE: web-portal/src/main/resources/templates/student-home.html
+============================================================
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Smart University - Dashboard Studente</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">🎓 Smart University</a>
+            <div class="d-flex align-items-center text-white">
+                <span class="me-3" th:text="'Benvenuto, ' + ${session.username}">Studente</span>
+                <a th:href="@{/logout}" class="btn btn-outline-light btn-sm">Disconnetti</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+
+        <!-- Messaggi di avviso -->
+        <div th:if="${success}" class="alert alert-success alert-dismissible fade show" role="alert">
+            <span th:text="${success}">Operazione completata!</span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+        <div th:if="${error}" class="alert alert-danger alert-dismissible fade show" role="alert">
+            <span th:text="${error}">Si è verificato un errore.</span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+
+        <!-- 📖 SEZIONE 1: IL MIO LIBRETTO UNIVERSITARIO -->
+        <div class="card shadow-sm border-0 mb-4">
+            <div class="card-header bg-dark text-white fw-bold d-flex align-items-center justify-content-between py-3">
+                <span>📖 Il Mio Libretto Universitario</span>
+                <span class="badge bg-primary fs-6" th:if="${mediaVoti != null}"
+                    th:text="'Media: ' + ${mediaVoti}">Media: --</span>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <!-- Intestazione Tabella -->
+                        <thead class="table-light">
+                            <tr>
+                                <th>Insegnamento</th>
+                                <th>Docente</th> <!-- Sostituito 'Data Verbalizzazione' con 'Docente' -->
+                                <th class="text-center">Voto / Esito</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:if="${#lists.isEmpty(libretto)}">
+                                <td colspan="3" class="text-center text-muted py-3">Nessun esame ancora superato o
+                                    verbalizzato nel libretto.</td>
+                            </tr>
+                            <tr th:each="grade : ${libretto}">
+                                <td class="fw-semibold text-dark" th:text="${grade.nomeInsegnamento}">Materia</td>
+                                <td th:text="${grade.docente}">Docente</td>
+                                <!-- CORRETTO: usa grade.docente anziché grade.dataVerbalizzazione -->
+                                <td class="text-center">
+                                    <span class="badge bg-success fs-6 px-3 py-2"
+                                        th:text="${grade.voto + (grade.lode ? 'L' : '')}">30L</span>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 🔄 SEZIONE 2 & 3: GRIGLIA AFFIANCATA (Appelli Disponibili e Le Mie Prenotazioni) -->
+        <div class="row g-4">
+
+            <!-- COLONNA SINISTRA: Appelli d'Esame Disponibili -->
+            <div class="col-lg-6">
+                <div class="card shadow-sm border-0 h-100">
+                    <div class="card-header bg-primary text-white fw-bold d-flex align-items-center py-3">
+                        <span>📚 Appelli d'Esame Disponibili</span>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Insegnamento</th>
+                                        <th>Data</th>
+                                        <th>Docente</th>
+                                        <th class="text-center">Azione</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:if="${#lists.isEmpty(availableCalls)}">
+                                        <td colspan="4" class="text-center text-muted py-3">Nessun appello disponibile
+                                            per la prenotazione.</td>
+                                    </tr>
+                                    <tr th:each="call : ${availableCalls}">
+                                        <td class="fw-semibold text-dark" th:text="${call.insegnamento.nome}">
+                                            Insegnamento</td>
+                                        <td th:text="${call.dataEsame}">Data</td>
+                                        <td th:text="${call.docente}">Docente</td>
+                                        <td class="text-center">
+                                            <form th:action="@{/student/book}" method="post" style="display:inline;">
+                                                <input type="hidden" name="callId" th:value="${call.id}">
+                                                <button type="submit" class="btn btn-primary btn-sm px-3 fw-semibold">
+                                                    Prenotati
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- COLONNA DESTRA: Le Mie Prenotazioni -->
+            <div class="col-lg-6">
+                <div class="card shadow-sm border-0 h-100">
+                    <div class="card-header bg-success text-white fw-bold d-flex align-items-center py-3">
+                        <span>📋 Le Mie Prenotazioni</span>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Insegnamento</th>
+                                        <th>Data Esame</th>
+                                        <th class="text-center">Stato</th>
+                                        <th class="text-center">Azione</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:if="${#lists.isEmpty(prenotazioni)}">
+                                        <td colspan="4" class="text-center text-muted py-3">Nessuna prenotazione attiva.
+                                        </td>
+                                    </tr>
+                                    <tr th:each="booking : ${prenotazioni}">
+                                        <td class="fw-semibold text-dark"
+                                            th:text="${booking.examCall.insegnamento.nome}">Materia</td>
+                                        <td th:text="${booking.examCall.dataEsame}">Data</td>
+                                        <td class="text-center">
+                                            <span th:if="${booking.stato == 'VERBALIZZATO'}"
+                                                class="badge bg-success px-3 py-2">✓ Verbalizzato</span>
+                                            <span th:if="${booking.stato == 'RIMANDATO'}"
+                                                class="badge bg-danger px-3 py-2">❌ Rimandato</span>
+                                            <span
+                                                th:if="${booking.stato == 'ATTESA_VERBALIZZAZIONE' or booking.stato == null}"
+                                                class="badge bg-warning text-dark px-3 py-2">⏳ In attesa</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <!-- Pulsante ANNULLA disponibile SOLO se in attesa ed appello aperto -->
+                                            <form
+                                                th:if="${!booking.examCall.chiuso and (booking.stato == 'ATTESA_VERBALIZZAZIONE' or booking.stato == null)}"
+                                                th:action="@{/student/cancel-booking}" method="post"
+                                                style="display:inline;">
+                                                <input type="hidden" name="bookingId" th:value="${booking.id}">
+                                                <button type="submit" class="btn btn-outline-danger btn-sm fw-semibold"
+                                                    onclick="return confirm('Sei sicuro di voler annullare questa prenotazione?');">
+                                                    Annulla
+                                                </button>
+                                            </form>
+
+                                            <!-- Se l'esame è VERBALIZZATO o RIMANDATO, la riga rimane bloccata nello storico -->
+                                            <span th:if="${booking.stato == 'VERBALIZZATO'}"
+                                                class="text-success small fw-bold">Archiviato</span>
+                                            <span th:if="${booking.stato == 'RIMANDATO'}"
+                                                class="text-muted small italic">Esame Concluso</span>
+                                            <span
+                                                th:if="${booking.examCall.chiuso and (booking.stato == 'ATTESA_VERBALIZZAZIONE' or booking.stato == null)}"
+                                                class="text-muted small italic">Appello Chiuso</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- Fine row -->
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+
+============================================================
+FILE: web-portal/src/main/resources/templates/admin-home.html
+============================================================
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart University - Area Amministratore</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f4f6f9; font-family: 'Segoe UI', sans-serif; }
+        .navbar { background-color: #1e293b !important; }
+        .card-custom { border: none; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark mb-4">
+    <div class="container">
+        <a class="navbar-brand fw-bold text-warning" href="#">Smart University - Pannello Admin ⚙️</a>
+        <div class="d-flex align-items-center">
+            <span class="text-white-50 me-3">Amministratore: <strong class="text-white" th:text="${username}">Admin</strong></span>
+            <a th:href="@{/logout}" class="btn btn-outline-danger btn-sm">Disconnetti</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        
+        <div class="col-12">
+            <div th:if="${success}" class="alert alert-success alert-dismissible fade show card-custom mb-4" role="alert">
+                <span th:text="${success}">Operazione completata!</span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <div th:if="${error}" class="alert alert-danger alert-dismissible fade show card-custom mb-4" role="alert">
+                <span th:text="${error}">Si è verificato un errore.</span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+
+        <!-- Sezione Registrazione Nuovo Utente -->
+        <div class="col-md-6 mb-4">
+            <div class="card card-custom p-4">
+                <h4 class="text-primary fw-bold mb-3">Registrazione Nuovo Utente</h4>
+                <p class="text-muted small">Crea credenziali sicure e profili anagrafici tra i microservizi.</p>
+                <hr>
+                
+                <form th:action="@{/admin/register-user}" method="post">
+                    <div class="mb-3">
+                        <label for="newUsername" class="form-label fw-semibold">Username</label>
+                        <input type="text" class="form-control" id="newUsername" name="newUsername" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="newPassword" class="form-label fw-semibold">Password</label>
+                        <input type="password" class="form-control" id="newPassword" name="newPassword" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="newRole" class="form-label fw-semibold">Ruolo Utente</label>
+                        <select class="form-select text-primary fw-semibold" id="newRole" name="newRole" onchange="toggleStudentFields()" required>
+                            <option value="DOCENTE">Docente</option>
+                            <option value="STUDENTE">Studente</option>
+                            <option value="ADMIN">Amministratore (Admin)</option>
+                        </select>
+                    </div>
+
+                    <!-- Campi Studente Dinamici -->
+                    <div id="studentFields" style="display: none; border-left: 3px solid #0d6efd; padding-left: 15px;">
+                        <h6 class="text-primary fw-bold mb-3">Dati Anagrafici Studente</h6>
+                        <div class="mb-2">
+                            <label class="form-label small fw-semibold">Nome</label>
+                            <input type="text" class="form-control form-control-sm" name="nome">
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label small fw-semibold">Cognome</label>
+                            <input type="text" class="form-control form-control-sm" name="cognome">
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label small fw-semibold">Matricola</label>
+                            <input type="text" class="form-control form-control-sm" name="matricola">
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label small fw-semibold">Email di Ateneo</label>
+                            <input type="email" class="form-control form-control-sm" name="email">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-semibold">Corso di Laurea</label>
+                            <input type="text" class="form-control form-control-sm" name="corsoDiLaurea">
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2 mt-4">
+                        <button type="submit" class="btn btn-primary fw-semibold">Crea Account e Profilo</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Sezione Attivazione Insegnamenti -->
+        <div class="col-md-6 mb-4">
+            <div class="card card-custom p-4">
+                <h4 class="text-success fw-bold mb-3">Attivazione Insegnamento</h4>
+                <p class="text-muted small">Crea un nuovo corso d'insegnamento ufficiale e assegna il docente di ruolo.</p>
+                <hr>
+                
+                <form th:action="@{/admin/create-course}" method="post">
+                    <div class="mb-3">
+                        <label for="codice" class="form-label fw-semibold">Codice Corso</label>
+                        <input type="text" class="form-control" id="codice" name="codice" placeholder="es. INF-01" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nome" class="form-label fw-semibold">Nome Insegnamento</label>
+                        <input type="text" class="form-control" id="nome" name="nome" placeholder="es. Ingegneria dei Sistemi Distribuiti" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="docente" class="form-label fw-semibold">Docente Responsabile (Username)</label>
+                        <input type="text" class="form-control" id="docente" name="docente" placeholder="es. prof.tramontana" required>
+                    </div>
+                    <div class="d-grid gap-2 mt-4">
+                        <button type="submit" class="btn btn-success fw-semibold">Attiva Insegnamento</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function toggleStudentFields() {
+        const role = document.getElementById('newRole').value;
+        const container = document.getElementById('studentFields');
+        const inputs = container.querySelectorAll('input');
+        if (role === 'STUDENTE') {
+            container.style.display = 'block';
+            inputs.forEach(i => i.required = true);
+        } else {
+            container.style.display = 'none';
+            inputs.forEach(i => { i.required = false; i.value = ''; });
+        }
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+============================================================
+FILE: web-portal/src/main/java/it/unict/smartuniversity/web_portal/WebPortalApplication.java
+============================================================
+
+package it.unict.smartuniversity.web_portal;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
+
+@SpringBootApplication
+public class WebPortalApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(WebPortalApplication.class, args);
+    }
+
+    /**
+     * Registriamo RestTemplate come Bean nel contesto di Spring.
+     * RestTemplate è il client HTTP sincrono che il portale utilizzerà 
+     * per inoltrare le richieste (es. Login o Recupero Voti) ai microservizi di backend.
+     */
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
+}
+
+============================================================
+FILE: web-portal/src/main/java/it/unict/smartuniversity/web_portal/dto/GradeDTO.java
+============================================================
+
+package it.unict.smartuniversity.web_portal.dto;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class GradeDTO {
+    private String nomeInsegnamento;
+    private Integer voto;
+    private Boolean lode;
+    private String docente;
+}
+
+============================================================
+FILE: web-portal/src/main/java/it/unict/smartuniversity/web_portal/controller/AdminWebController.java
+============================================================
+
+package it.unict.smartuniversity.web_portal.controller;
+
+import jakarta.servlet.http.HttpSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.client.RestTemplate;
+
+import java.util.HashMap;
+import java.util.Map;
+
+@Controller
+public class AdminWebController {
+
+    @Autowired
+    private RestTemplate restTemplate;
+
+    @Value("${backend.auth-service.url}")
+    private String authServiceUrl;
+
+    @Value("${backend.student-service.url}")
+    private String studentServiceUrl;
+
+    @Value("${backend.exam-service.url}")
+    private String examServiceUrl;
+
+    @GetMapping("/admin/home")
+    public String showAdminHome(HttpSession session, Model model) {
+        String token = (String) session.getAttribute("token");
+        String role = (String) session.getAttribute("role");
+        String username = (String) session.getAttribute("username");
+
+        if (token == null || !"ADMIN".equalsIgnoreCase(role)) {
+            session.invalidate();
+            model.addAttribute("error", "Accesso negato! Area riservata agli amministratori.");
+            return "redirect:/login";
+        }
+
+        model.addAttribute("username", username);
+        return "admin-home";
+    }
+
+    @PostMapping("/admin/register-user")
+    public String registerUser(
+            @RequestParam("newUsername") String newUsername,
+            @RequestParam("newPassword") String newPassword,
+            @RequestParam("newRole") String newRole,
+            @RequestParam(value = "nome", required = false) String nome,
+            @RequestParam(value = "cognome", required = false) String cognome,
+            @RequestParam(value = "matricola", required = false) String matricola,
+            @RequestParam(value = "email", required = false) String email,
+            @RequestParam(value = "corsoDiLaurea", required = false) String corsoDiLaurea,
+            HttpSession session,
+            Model model) {
+
+        String token = (String) session.getAttribute("token");
+        String role = (String) session.getAttribute("role");
+        String username = (String) session.getAttribute("username");
+
+        if (token == null || !"ADMIN".equalsIgnoreCase(role)) {
+            session.invalidate();
+            return "redirect:/login";
+        }
+
+        try {
+            // 1. REGISTRAZIONE SU AUTH-SERVICE
+            Map<String, Object> authBody = new HashMap<>();
+            authBody.put("username", newUsername);
+            authBody.put("password", newPassword);
+            authBody.put("role", newRole);
+
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_JSON);
+            headers.set("Authorization", "Bearer " + token);
+
+            HttpEntity<Map<String, Object>> authEntity = new HttpEntity<>(authBody, headers);
+            String authEndpoint = authServiceUrl + "/register"; 
+            ResponseEntity<Map> authResponse = restTemplate.postForEntity(authEndpoint, authEntity, Map.class);
+
+            if (authResponse.getStatusCode().is2xxSuccessful()) {
+                
+                // 2. PROPAGAZIONE SU STUDENT-SERVICE SE STUDENTE
+                if ("STUDENTE".equalsIgnoreCase(newRole)) {
+                    Map<String, Object> studentBody = new HashMap<>();
+                    studentBody.put("username", newUsername);
+                    studentBody.put("nome", nome);
+                    studentBody.put("cognome", cognome);
+                    studentBody.put("matricola", matricola);
+                    studentBody.put("email", email);
+                    studentBody.put("corsoDiLaurea", corsoDiLaurea);
+
+                    HttpEntity<Map<String, Object>> studentEntity = new HttpEntity<>(studentBody, headers);
+                    ResponseEntity<Map> studentResponse = restTemplate.postForEntity(studentServiceUrl, studentEntity, Map.class);
+
+                    if (!studentResponse.getStatusCode().is2xxSuccessful()) {
+                        model.addAttribute("error", "Credenziali create, ma fallita la sincronizzazione anagrafica nello student-service.");
+                        model.addAttribute("username", username);
+                        return "admin-home";
+                    }
+                }
+
+                model.addAttribute("success", "Utente '" + newUsername + "' registrato con successo!");
+            } else {
+                model.addAttribute("error", "Errore durante la registrazione delle credenziali.");
+            }
+
+        } catch (Exception e) {
+            model.addAttribute("error", "Errore di sincronizzazione distribuita: " + e.getMessage());
+        }
+
+        model.addAttribute("username", username);
+        return "admin-home";
+    }
+
+    /**
+     * CORRETTO: Gestisce l'attivazione di un insegnamento (materia) nell'offerta formativa.
+     */
+    @PostMapping("/admin/create-course")
+    public String createInsegnamento(
+            @RequestParam("codice") String codice,
+            @RequestParam("nome") String nome,
+            @RequestParam("docente") String docente,
+            HttpSession session,
+            Model model) {
+
+        String token = (String) session.getAttribute("token");
+        String role = (String) session.getAttribute("role");
+        String username = (String) session.getAttribute("username");
+
+        if (token == null || !"ADMIN".equalsIgnoreCase(role)) {
+            session.invalidate();
+            return "redirect:/login";
+        }
+
+        try {
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_JSON);
+            headers.set("Authorization", "Bearer " + token);
+
+            Map<String, Object> requestBody = new HashMap<>();
+            requestBody.put("codice", codice);
+            requestBody.put("nome", nome);
+            requestBody.put("docente", docente);
+
+            HttpEntity<Map<String, Object>> requestEntity = new HttpEntity<>(requestBody, headers);
+
+            String endpoint = examServiceUrl + "/courses"; 
+            ResponseEntity<Map> response = restTemplate.postForEntity(endpoint, requestEntity, Map.class);
+
+            if (response.getStatusCode().is2xxSuccessful() || response.getStatusCode().value() == 201) {
+                model.addAttribute("success", "Insegnamento '" + nome + "' attivato con successo e assegnato al docente " + docente + "!");
+            } else {
+                model.addAttribute("error", "Errore del server durante l'attivazione del corso.");
+            }
+
+        } catch (Exception e) {
+            model.addAttribute("error", "Errore di comunicazione con il servizio esami: " + e.getMessage());
+        }
+
+        model.addAttribute("username", username);
+        return "admin-home";
+    }
+}
+
+============================================================
+FILE: web-portal/src/main/java/it/unict/smartuniversity/web_portal/controller/DocenteWebController.java
+============================================================
+
+package it.unict.smartuniversity.web_portal.controller;
+
+import jakarta.servlet.http.HttpSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.*;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.client.RestTemplate;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+@Controller
+public class DocenteWebController {
+
+    @Autowired
+    private RestTemplate restTemplate;
+
+    @Value("${backend.exam-service.url}")
+    private String examServiceUrl;
+
+    @GetMapping("/docente/home")
+    public String showDocenteHome(HttpSession session, Model model) {
+        String token = (String) session.getAttribute("token");
+        String role = (String) session.getAttribute("role");
+        String username = (String) session.getAttribute("username");
+
+        if (token == null || !"DOCENTE".equalsIgnoreCase(role)) {
+            session.invalidate();
+            model.addAttribute("error", "Accesso negato!");
+            return "redirect:/login";
+        }
+
+        try {
+            HttpHeaders headers = new HttpHeaders();
+            headers.set("Authorization", "Bearer " + token);
+            HttpEntity<Void> requestEntity = new HttpEntity<>(headers);
+
+            // 1. Carica i corsi del docente
+            ResponseEntity<List<Map>> coursesResponse = restTemplate.exchange(
+                    examServiceUrl + "/courses/my",
+                    HttpMethod.GET,
+                    requestEntity,
+                    new ParameterizedTypeReference<List<Map>>() {}
+            );
+            model.addAttribute("courses", coursesResponse.getBody());
+
+            // 2. Carica gli appelli creati
+            ResponseEntity<List<Map>> callsResponse = restTemplate.exchange(
+                    examServiceUrl + "/calls",
+                    HttpMethod.GET,
+                    requestEntity,
+                    new ParameterizedTypeReference<List<Map>>() {}
+            );
+            
+            List<Map> myCalls = new ArrayList<>();
+            if (callsResponse.getBody() != null) {
+                for (Map call : callsResponse.getBody()) {
+                    if (username.equalsIgnoreCase((String) call.get("docente"))) {
+                        myCalls.add(call);
+                    }
+                }
+            }
+            model.addAttribute("appelli", myCalls);
+
+            // 3. Carica le prenotazioni attive DA VERBALIZZARE
+            ResponseEntity<List<Map>> pendingResponse = restTemplate.exchange(
+                    examServiceUrl + "/docente/pending-bookings",
+                    HttpMethod.GET,
+                    requestEntity,
+                    new ParameterizedTypeReference<List<Map>>() {}
+            );
+            model.addAttribute("pendingBookings", pendingResponse.getBody());
+
+        } catch (Exception e) {
+            model.addAttribute("error", "Errore nel caricamento dei dati: " + e.getMessage());
+        }
+
+        model.addAttribute("username", username);
+        return "docente-home";
+    }
+
+    @PostMapping("/docente/create-call")
+    public String createExamCall(
+            @RequestParam("insegnamentoId") Long insegnamentoId,
+            @RequestParam("dataEsame") String dataEsame,
+            HttpSession session,
+            Model model) {
+
+        String token = (String) session.getAttribute("token");
+        String role = (String) session.getAttribute("role");
+
+        if (token == null || !"DOCENTE".equalsIgnoreCase(role)) {
+            session.invalidate();
+            return "redirect:/login";
+        }
+
+        try {
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_JSON);
+            headers.set("Authorization", "Bearer " + token);
+
+            Map<String, Object> requestBody = new HashMap<>();
+            requestBody.put("insegnamentoId", insegnamentoId);
+            requestBody.put("dataEsame", dataEsame);
+
+            HttpEntity<Map<String, Object>> requestEntity = new HttpEntity<>(requestBody, headers);
+
+            String endpoint = examServiceUrl + "/calls";
+            ResponseEntity<Map> response = restTemplate.postForEntity(endpoint, requestEntity, Map.class);
+
+            if (response.getStatusCode().is2xxSuccessful() || response.getStatusCode().value() == 201) {
+                model.addAttribute("success", "Appello d'esame ufficiale programmato con successo!");
+            } else {
+                model.addAttribute("error", "Impossibile pubblicare l'appello d'esame.");
+            }
+        } catch (org.springframework.web.client.HttpClientErrorException e) {
+            model.addAttribute("error", "Errore dal servizio esami: " + e.getResponseBodyAsString());
+        } catch (Exception e) {
+            model.addAttribute("error", "Errore di comunicazione: " + e.getMessage());
+        }
+
+        return showDocenteHome(session, model);
+    }
+
+    @PostMapping("/docente/close-call")
+    public String closeExamCall(
+            @RequestParam("callId") Long callId,
+            HttpSession session,
+            Model model) {
+
+        String token = (String) session.getAttribute("token");
+        String role = (String) session.getAttribute("role");
+
+        if (token == null || !"DOCENTE".equalsIgnoreCase(role)) {
+            session.invalidate();
+            return "redirect:/login";
+        }
+
+        try {
+            HttpHeaders headers = new HttpHeaders();
+            headers.set("Authorization", "Bearer " + token);
+            HttpEntity<Void> requestEntity = new HttpEntity<>(headers);
+
+            String endpoint = examServiceUrl + "/calls/" + callId + "/close";
+            ResponseEntity<Map> response = restTemplate.postForEntity(endpoint, requestEntity, Map.class);
+
+            if (response.getStatusCode().is2xxSuccessful()) {
+                model.addAttribute("success", "L'appello d'esame è stato chiuso con successo!");
+            } else {
+                model.addAttribute("error", "Impossibile chiudere l'appello.");
+            }
+        } catch (Exception e) {
+            model.addAttribute("error", "Errore durante la chiusura dell'appello: " + e.getMessage());
+        }
+
+        return showDocenteHome(session, model);
+    }
+
+    @PostMapping("/docente/verbalizza")
+    public String verbalizzaVoto(
+            @RequestParam("bookingId") Long bookingId,
+            @RequestParam("esito") String esito,
+            @RequestParam(value = "voto", required = false) Integer voto,
+            @RequestParam(value = "lode", required = false) Boolean lode,
+            HttpSession session, Model model) {
+
+        String token = (String) session.getAttribute("token");
+        String role = (String) session.getAttribute("role");
+
+        if (token == null || !"DOCENTE".equalsIgnoreCase(role)) {
+            session.invalidate();
+            return "redirect:/login";
+        }
+
+        try {
+            HttpHeaders headers = new HttpHeaders();
+            headers.set("Authorization", "Bearer " + token);
+            headers.setContentType(MediaType.APPLICATION_JSON); // CORRETTO: JSON payload
+
+            Map<String, Object> body = new HashMap<>();
+            body.put("bookingId", bookingId);
+            body.put("esito", esito);
+            body.put("voto", "PROMOSSO".equalsIgnoreCase(esito) ? (voto != null ? voto : 18) : 0);
+            body.put("lode", "PROMOSSO".equalsIgnoreCase(esito) && Boolean.TRUE.equals(lode));
+
+            HttpEntity<Map<String, Object>> requestEntity = new HttpEntity<>(body, headers);
+
+            // CORRETTO: Endpoint /grades
+            String endpoint = examServiceUrl + "/grades";
+            ResponseEntity<Map> response = restTemplate.postForEntity(endpoint, requestEntity, Map.class);
+
+            if (response.getStatusCode().is2xxSuccessful()) {
+                model.addAttribute("success", "Verbalizzazione (" + esito + ") completata con successo!");
+            } else {
+                model.addAttribute("error", "Errore durante la verbalizzazione.");
+            }
+        } catch (Exception e) {
+            model.addAttribute("error", "Errore durante la verbalizzazione: " + e.getMessage());
+        }
+
+        return showDocenteHome(session, model);
+    }
+}
+
+
+============================================================
+FILE: web-portal/src/main/java/it/unict/smartuniversity/web_portal/controller/LoginController.java
+============================================================
+
+package it.unict.smartuniversity.web_portal.controller;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.servlet.http.HttpSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.client.RestTemplate;
+
+import java.util.Base64;
+import java.util.HashMap;
+import java.util.Map;
+
+@Controller
+public class LoginController {
+
+    @Autowired
+    private RestTemplate restTemplate;
+
+    @Value("${backend.auth-service.url}")
+    private String authServiceUrl;
+
+    @GetMapping("/login")
+    public String showLoginPage(HttpSession session, Model model) {
+        String role = (String) session.getAttribute("role");
+        if (role != null) {
+            if ("STUDENTE".equalsIgnoreCase(role)) return "redirect:/student/home";
+            if ("DOCENTE".equalsIgnoreCase(role)) return "redirect:/docente/home";
+            if ("ADMIN".equalsIgnoreCase(role)) return "redirect:/admin/home";
+        }
+        return "login";
+    }
+
+    @PostMapping("/login")
+    public String handleLogin(
+            @RequestParam("username") String username,
+            @RequestParam("password") String password,
+            HttpSession session,
+            Model model) {
+
+        try {
+            Map<String, String> loginRequest = new HashMap<>();
+            loginRequest.put("username", username);
+            loginRequest.put("password", password);
+
+            String endpoint = authServiceUrl + "/login";
+            ResponseEntity<Map> responseEntity = restTemplate.postForEntity(endpoint, loginRequest, Map.class);
+
+            if (responseEntity.getStatusCode().is2xxSuccessful() && responseEntity.getBody() != null) {
+                Map<String, Object> body = responseEntity.getBody();
+                String token = (String) body.get("token");
+
+                if (token != null) {
+                    // --- DECODIFICA DEL JWT SENZA LIBRERIE ESTERNE ---
+                    // Un JWT è composto da: Header.Payload.Signature
+                    String[] jwtParts = token.split("\\.");
+                    String payloadBase64 = jwtParts[1];
+                    
+                    // Decodifichiamo la parte centrale (Payload)
+                    String payloadJson = new String(Base64.getUrlDecoder().decode(payloadBase64));
+                    
+                    // Convertiamo la stringa JSON in una Mappa Java usando Jackson (ObjectMapper)
+                    ObjectMapper mapper = new ObjectMapper();
+                    Map<String, Object> claims = mapper.readValue(payloadJson, Map.class);
+
+                    // Estraiamo i dati reali dal Token
+                    String role = (String) claims.get("role");
+                    String tokenUsername = (String) claims.get("sub"); // Lo standard JWT salva l'utente nel subject ("sub")
+
+                    // Salviamo i dati decodificati nel Server Session State (HttpSession)
+                    session.setAttribute("token", token);
+                    session.setAttribute("username", tokenUsername != null ? tokenUsername : username);
+                    session.setAttribute("role", role);
+
+                    System.out.println("🔑 Login riuscito per " + tokenUsername + ". Ruolo estratto dal JWT: " + role);
+
+                    // Reindirizzamento basato su RBAC
+                    if ("STUDENTE".equalsIgnoreCase(role)) {
+                        return "redirect:/student/home";
+                    } else if ("DOCENTE".equalsIgnoreCase(role)) {
+                        return "redirect:/docente/home";
+                    } else if ("ADMIN".equalsIgnoreCase(role)) {
+                        return "redirect:/admin/home";
+                    }
+                }
+            }
+
+            model.addAttribute("error", "Credenziali non valide.");
+            return "login";
+
+        } catch (Exception e) {
+            model.addAttribute("error", "Accesso negato! Controlla username e password.");
+            return "login";
+        }
+    }
+
+    @GetMapping("/logout")
+    public String handleLogout(HttpSession session, Model model) {
+        session.invalidate();
+        model.addAttribute("message", "Disconnessione avvenuta con successo.");
+        return "login";
+    }
+}
+
+============================================================
+FILE: web-portal/src/main/java/it/unict/smartuniversity/web_portal/controller/StudentWebController.java
+============================================================
+
+package it.unict.smartuniversity.web_portal.controller;
+
+import it.unict.smartuniversity.web_portal.dto.GradeDTO;
+import jakarta.servlet.http.HttpSession;
+import io.github.resilience4j.circuitbreaker.CircuitBreaker;
+import io.github.resilience4j.circuitbreaker.CircuitBreakerConfig;
+import io.vavr.control.Try;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.*;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.client.RestTemplate;
+
+import java.time.Duration;
+import java.util.*;
+import java.util.function.Supplier;
+
+@Controller
+public class StudentWebController {
+
+    @Autowired
+    private RestTemplate restTemplate;
+
+    @Value("${backend.student-service.url}")
+    private String studentServiceUrl;
+
+    @Value("${backend.exam-service.url}")
+    private String examServiceUrl;
+
+    private final CircuitBreaker circuitBreaker = CircuitBreaker.of("studentServiceCB",
+            CircuitBreakerConfig.custom()
+                    .slidingWindowSize(5)
+                    .failureRateThreshold(50)
+                    .waitDurationInOpenState(Duration.ofSeconds(10))
+                    .build());
+
+    @GetMapping("/student/home")
+    public String showStudentHome(HttpSession session, Model model) {
+        String token = (String) session.getAttribute("token");
+        String role = (String) session.getAttribute("role");
+        String username = (String) session.getAttribute("username");
+
+        if (token == null || !"STUDENTE".equalsIgnoreCase(role)) {
+            session.invalidate();
+            model.addAttribute("error", "Accesso negato! Effettua prima il login.");
+            return "redirect:/login";
+        }
+
+        try {
+            HttpHeaders headers = new HttpHeaders();
+            headers.set("Authorization", "Bearer " + token);
+            HttpEntity<Void> requestEntity = new HttpEntity<>(headers);
+
+            // 1. Carica le prenotazioni dello studente
+            ResponseEntity<List<Map>> bookingsResponse = restTemplate.exchange(
+                    examServiceUrl + "/my-bookings",
+                    HttpMethod.GET,
+                    requestEntity,
+                    new ParameterizedTypeReference<List<Map>>() {});
+            List<Map> myBookings = bookingsResponse.getBody();
+            model.addAttribute("prenotazioni", myBookings);
+
+            // 2. Carica gli appelli ufficiali (mantiene SOLO quelli APERTI: chiuso == false)
+            ResponseEntity<List<Map>> callsResponse = restTemplate.exchange(
+                    examServiceUrl + "/calls",
+                    HttpMethod.GET,
+                    requestEntity,
+                    new ParameterizedTypeReference<List<Map>>() {});
+
+            List<Map> allCalls = callsResponse.getBody();
+            List<Map> availableCalls = new ArrayList<>();
+            if (allCalls != null) {
+                for (Map call : allCalls) {
+                    Boolean chiuso = (Boolean) call.get("chiuso");
+                    if (chiuso == null || !chiuso) {
+                        availableCalls.add(call);
+                    }
+                }
+            }
+            model.addAttribute("availableCalls", availableCalls);
+
+        } catch (Exception e) {
+            model.addAttribute("error", "Errore nel caricamento dei dati dagli esami: " + e.getMessage());
+        }
+
+        // 3. Carica il libretto universitario con Circuit Breaker Resilience4j
+        Supplier<List<GradeDTO>> restCallSupplier = () -> {
+            HttpHeaders headers = new HttpHeaders();
+            headers.set("Authorization", "Bearer " + token);
+            HttpEntity<Void> requestEntity = new HttpEntity<>(headers);
+
+            String endpoint = studentServiceUrl + "/me/grades";
+            ResponseEntity<List<GradeDTO>> responseEntity = restTemplate.exchange(
+                    endpoint,
+                    HttpMethod.GET,
+                    requestEntity,
+                    new ParameterizedTypeReference<List<GradeDTO>>() {});
+            return responseEntity.getBody();
+        };
+
+        List<GradeDTO> libretto = Try.ofSupplier(CircuitBreaker.decorateSupplier(circuitBreaker, restCallSupplier))
+                .recover(throwable -> {
+                    System.err.println("⚠️ [Resilience4J CB] Fallback attivo: " + throwable.getMessage());
+                    model.addAttribute("warning", "Servizio carriere momentaneamente offline.");
+                    return new ArrayList<>();
+                })
+                .get();
+
+        model.addAttribute("username", username);
+        model.addAttribute("libretto", libretto);
+
+        return "student-home";
+    }
+
+    @PostMapping("/student/book")
+    public String bookExamCall(@RequestParam("callId") Long callId, HttpSession session, Model model) {
+        String token = (String) session.getAttribute("token");
+        String role = (String) session.getAttribute("role");
+
+        if (token == null || !"STUDENTE".equalsIgnoreCase(role)) {
+            session.invalidate();
+            return "redirect:/login";
+        }
+
+        try {
+            HttpHeaders headers = new HttpHeaders();
+            headers.set("Authorization", "Bearer " + token);
+            headers.setContentType(MediaType.APPLICATION_JSON);
+
+            // 1. Recupera il profilo anagrafico per ottenere la matricola
+            HttpEntity<Void> profileRequest = new HttpEntity<>(headers);
+            ResponseEntity<Map> profileResponse = restTemplate.exchange(
+                    studentServiceUrl + "/me",
+                    HttpMethod.GET,
+                    profileRequest,
+                    Map.class);
+
+            String matricola = (String) profileResponse.getBody().get("matricola");
+
+            // 2. CORREZIONE: Imposta l'header 'X-Student-Matricola' per ExamController
+            headers.set("X-Student-Matricola", matricola);
+
+            // 3. Effettua la prenotazione inoltrando l'header 'X-Student-Matricola'
+            HttpEntity<Void> bookRequestEntity = new HttpEntity<>(headers);
+            String endpoint = examServiceUrl + "/calls/" + callId + "/book";
+            ResponseEntity<Map> response = restTemplate.postForEntity(endpoint, bookRequestEntity, Map.class);
+
+            if (response.getStatusCode().is2xxSuccessful()) {
+                model.addAttribute("success", "Prenotazione effettuata con successo!");
+            } else {
+                model.addAttribute("error", "Impossibile completare la prenotazione.");
+            }
+        } catch (org.springframework.web.client.HttpClientErrorException e) {
+            model.addAttribute("error", "Errore prenotazione: " + e.getResponseBodyAsString());
+        } catch (Exception e) {
+            model.addAttribute("error", "Errore durante la prenotazione: " + e.getMessage());
+        }
+
+        return showStudentHome(session, model);
+    }
+
+    @PostMapping("/student/cancel-booking")
+    public String cancelBooking(@RequestParam("bookingId") Long bookingId, HttpSession session, Model model) {
+        String token = (String) session.getAttribute("token");
+        String role = (String) session.getAttribute("role");
+
+        if (token == null || !"STUDENTE".equalsIgnoreCase(role)) {
+            session.invalidate();
+            return "redirect:/login";
+        }
+
+        try {
+            HttpHeaders headers = new HttpHeaders();
+            headers.set("Authorization", "Bearer " + token);
+            HttpEntity<Void> requestEntity = new HttpEntity<>(headers);
+
+            String endpoint = examServiceUrl + "/bookings/" + bookingId + "/cancel";
+            ResponseEntity<Map> response = restTemplate.postForEntity(endpoint, requestEntity, Map.class);
+
+            if (response.getStatusCode().is2xxSuccessful()) {
+                model.addAttribute("success", "Prenotazione annullata con successo!");
+            } else {
+                model.addAttribute("error", "Impossibile annullare la prenotazione.");
+            }
+        } catch (Exception e) {
+            model.addAttribute("error", "Errore durante l'annullamento della prenotazione: " + e.getMessage());
+        }
+
+        return showStudentHome(session, model);
+    }
+}
+
+
+============================================================
+FILE: web-portal/src/test/java/it/unict/smartuniversity/web_portal/WebPortalApplicationTests.java
+============================================================
+
+package it.unict.smartuniversity.web_portal;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class WebPortalApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
+
+
+============================================================
+FILE: web-portal/target/classes/templates/login.html
+============================================================
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart University - Accedi</title>
+    <!-- Bootstrap CSS per una grafica moderna e accattivante -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/tailwind.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0d6efd 0%, #001233 100%);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        .btn-primary {
+            border-radius: 8px;
+            padding: 10px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card p-4">
+                <div class="card-body">
+                    <h2 class="text-center mb-4 text-primary fw-bold">Smart University</h2>
+                    <h5 class="text-center text-muted mb-4">Accedi al Portale</h5>
+
+                    <!-- Messaggio di errore dinamico in caso di credenziali errate -->
+                    <div th:if="${error}" class="alert alert-danger" role="alert" th:text="${error}">
+                        Errore generico di login.
+                    </div>
+
+                    <!-- Messaggio di avviso in caso di disconnessione -->
+                    <div th:if="${message}" class="alert alert-info" role="alert" th:text="${message}">
+                        Messaggio informativo.
+                    </div>
+
+                    <form th:action="@{/login}" method="post">
+                        <div class="mb-3">
+                            <label for="username" class="form-label fw-semibold">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="es. mario.rossi" required autocomplete="username">
+                        </div>
+                        <div class="mb-4">
+                            <label for="password" class="form-label fw-semibold">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="••••••••" required autocomplete="current-password">
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-block">Accedi</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <p class="text-center text-white-50 mt-4">&copy; 2026 Università degli Studi di Catania</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+============================================================
+FILE: web-portal/target/classes/templates/docente-home.html
+============================================================
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart University - Portale Docente</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8f9fa; }
+        .navbar-custom { background-color: #0d6efd; }
+        .card-custom { border: none; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom mb-4">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">🎓 Smart University</a>
+            <div class="d-flex align-items-center text-white">
+                <span class="me-3">Benvenuto, Prof. <strong th:text="${username}">Docente</strong></span>
+                <span class="badge bg-light text-primary me-3 fs-6">Ruolo: DOCENTE</span>
+                <a th:href="@{/logout}" class="btn btn-outline-light btn-sm fw-semibold">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div th:if="${success}" class="alert alert-success alert-dismissible fade show card-custom mb-4" role="alert">
+                    <span th:text="${success}">Operazione completata!</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <div th:if="${error}" class="alert alert-danger alert-dismissible fade show card-custom mb-4" role="alert">
+                    <span th:text="${error}">Si è verificato un errore.</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Programmazione Appelli d'Esame -->
+            <div class="col-md-5 mb-4">
+                <div class="card card-custom p-4">
+                    <h4 class="text-primary fw-bold mb-3">Pianifica Appello d'Esame</h4>
+                    <p class="text-muted small">Crea una sessione d'appello d'esame per i tuoi corsi.</p>
+                    <hr>
+
+                    <form th:action="@{/docente/create-call}" method="post">
+                        <div class="mb-3">
+                            <label for="insegnamentoId" class="form-label fw-semibold">Insegnamento</label>
+                            <select class="form-select" id="insegnamentoId" name="insegnamentoId" required>
+                                <option th:each="course : ${courses}" th:value="${course.id}" th:text="${course.codice + ' - ' + course.nome}"></option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="dataEsame" class="form-label fw-semibold">Data Esame</label>
+                            <input type="date" class="form-control" id="dataEsame" name="dataEsame" required>
+                        </div>
+                        <div class="d-grid gap-2 mt-4">
+                            <button type="submit" class="btn btn-primary fw-semibold">Crea e Pubblica Appello</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Registro Appelli Programmati -->
+            <div class="col-md-7 mb-4">
+                <div class="card card-custom p-4">
+                    <h4 class="text-dark fw-bold mb-3">I Tuoi Appelli Programmati</h4>
+                    <p class="text-muted small">Gestisci lo stato degli appelli ufficiali.</p>
+                    <hr>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Insegnamento</th>
+                                    <th>Data Esame</th>
+                                    <th>Stato</th>
+                                    <th class="text-center">Azione</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:if="${#lists.isEmpty(appelli)}">
+                                    <td colspan="4" class="text-center text-muted py-3">Nessun appello creato.</td>
+                                </tr>
+                                <tr th:each="call : ${appelli}">
+                                    <td class="fw-semibold text-dark" th:text="${call.insegnamento.nome}">Materia</td>
+                                    <td th:text="${call.dataEsame}">Data</td>
+                                    <td>
+                                        <span th:if="${call.chiuso}" class="badge bg-secondary px-2 py-1">Chiuso</span>
+                                        <span th:if="${!call.chiuso}" class="badge bg-success px-2 py-1">Aperto</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <form th:if="${!call.chiuso}" th:action="@{/docente/close-call}" method="post" style="display:inline;">
+                                            <input type="hidden" name="callId" th:value="${call.id}">
+                                            <button type="submit" class="btn btn-warning btn-sm fw-semibold">Chiudi Appello</button>
+                                        </form>
+                                        <span th:if="${call.chiuso}" class="text-muted small italic">Iscrizioni Chiuse</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sezione Verbalizzazione Guidata (Solo Studenti Prenotati) -->
+        <div class="row">
+            <div class="col-12 mb-4">
+                <div class="card card-custom p-4">
+                    <h4 class="text-success fw-bold mb-3">Verbalizzazione Esami (Studenti Prenotati)</h4>
+                    <p class="text-muted small">Seleziona l'esito per ciascun candidato iscritto agli appelli ufficiali.</p>
+                    <hr>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Matricola Studente</th>
+                                    <th>Insegnamento</th>
+                                    <th>Data Appello</th>
+                                    <th class="text-center">Azione Verbalizzazione</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:if="${#lists.isEmpty(pendingBookings)}">
+                                    <td colspan="4" class="text-center text-muted py-4">Nessuna prenotazione pendente da verbalizzare.</td>
+                                </tr>
+                                <tr th:each="b : ${pendingBookings}">
+                                    <td class="fw-bold text-primary" th:text="${b.matricola}">M81001234</td>
+                                    <td class="fw-semibold" th:text="${b.examCall.insegnamento.nome}">Materia</td>
+                                    <td th:text="${b.examCall.dataEsame}">Data</td>
+                                    <td>
+                                        <form th:action="@{/docente/verbalizza}" method="post" class="d-flex align-items-center justify-content-center gap-2">
+                                            <input type="hidden" name="bookingId" th:value="${b.id}">
+
+                                            <select name="esito" class="form-select form-select-sm w-auto" 
+                                                    th:id="'esitoSelect-' + ${b.id}" 
+                                                    th:onchange="'toggleGradeInputs(' + ${b.id} + ')'" required>
+                                                <option value="PROMOSSO" selected>Promosso</option>
+                                                <option value="RIMANDATO">Rimandato</option>
+                                            </select>
+
+                                            <input type="number" name="voto" class="form-control form-control-sm" style="width: 80px;" 
+                                                   th:id="'votoInput-' + ${b.id}" min="18" max="30" value="18" 
+                                                   th:onchange="'toggleLodeCheckbox(' + ${b.id} + ')'" required>
+
+                                            <div class="form-check me-2" th:id="'lodeBox-' + ${b.id}">
+                                                <input class="form-check-input" type="checkbox" name="lode" value="true" th:id="'lodeCheck-' + ${b.id}" disabled>
+                                                <label class="form-check-label small" th:for="'lodeCheck-' + ${b.id}">Lode</label>
+                                            </div>
+
+                                            <button type="submit" class="btn btn-success btn-sm fw-semibold">Verbalizza</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    function toggleGradeInputs(id) {
+        const esito = document.getElementById('esitoSelect-' + id).value;
+        const votoInput = document.getElementById('votoInput-' + id);
+        const lodeCheck = document.getElementById('lodeCheck-' + id);
+
+        if (esito === 'RIMANDATO') {
+            votoInput.value = '';
+            votoInput.disabled = true;
+            votoInput.required = false;
+            lodeCheck.checked = false;
+            lodeCheck.disabled = true;
+        } else {
+            votoInput.disabled = false;
+            votoInput.required = true;
+            votoInput.value = '18';
+            toggleLodeCheckbox(id);
+        }
+    }
+
+    function toggleLodeCheckbox(id) {
+        const votoInput = document.getElementById('votoInput-' + id);
+        const lodeCheck = document.getElementById('lodeCheck-' + id);
+        if (parseInt(votoInput.value) === 30) {
+            lodeCheck.disabled = false;
+        } else {
+            lodeCheck.checked = false;
+            lodeCheck.disabled = true;
+        }
+    }
+    </script>
+</body>
+</html>
+
+
+============================================================
+FILE: web-portal/target/classes/templates/student-home.html
+============================================================
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Smart University - Dashboard Studente</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">🎓 Smart University</a>
+            <div class="d-flex align-items-center text-white">
+                <span class="me-3" th:text="'Benvenuto, ' + ${session.username}">Studente</span>
+                <a th:href="@{/logout}" class="btn btn-outline-light btn-sm">Disconnetti</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+
+        <!-- Messaggi di avviso -->
+        <div th:if="${success}" class="alert alert-success alert-dismissible fade show" role="alert">
+            <span th:text="${success}">Operazione completata!</span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+        <div th:if="${error}" class="alert alert-danger alert-dismissible fade show" role="alert">
+            <span th:text="${error}">Si è verificato un errore.</span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+
+        <!-- 📖 SEZIONE 1: IL MIO LIBRETTO UNIVERSITARIO -->
+        <div class="card shadow-sm border-0 mb-4">
+            <div class="card-header bg-dark text-white fw-bold d-flex align-items-center justify-content-between py-3">
+                <span>📖 Il Mio Libretto Universitario</span>
+                <span class="badge bg-primary fs-6" th:if="${mediaVoti != null}"
+                    th:text="'Media: ' + ${mediaVoti}">Media: --</span>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <!-- Intestazione Tabella -->
+                        <thead class="table-light">
+                            <tr>
+                                <th>Insegnamento</th>
+                                <th>Docente</th> <!-- Sostituito 'Data Verbalizzazione' con 'Docente' -->
+                                <th class="text-center">Voto / Esito</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:if="${#lists.isEmpty(libretto)}">
+                                <td colspan="3" class="text-center text-muted py-3">Nessun esame ancora superato o
+                                    verbalizzato nel libretto.</td>
+                            </tr>
+                            <tr th:each="grade : ${libretto}">
+                                <td class="fw-semibold text-dark" th:text="${grade.nomeInsegnamento}">Materia</td>
+                                <td th:text="${grade.docente}">Docente</td>
+                                <!-- CORRETTO: usa grade.docente anziché grade.dataVerbalizzazione -->
+                                <td class="text-center">
+                                    <span class="badge bg-success fs-6 px-3 py-2"
+                                        th:text="${grade.voto + (grade.lode ? 'L' : '')}">30L</span>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 🔄 SEZIONE 2 & 3: GRIGLIA AFFIANCATA (Appelli Disponibili e Le Mie Prenotazioni) -->
+        <div class="row g-4">
+
+            <!-- COLONNA SINISTRA: Appelli d'Esame Disponibili -->
+            <div class="col-lg-6">
+                <div class="card shadow-sm border-0 h-100">
+                    <div class="card-header bg-primary text-white fw-bold d-flex align-items-center py-3">
+                        <span>📚 Appelli d'Esame Disponibili</span>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Insegnamento</th>
+                                        <th>Data</th>
+                                        <th>Docente</th>
+                                        <th class="text-center">Azione</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:if="${#lists.isEmpty(availableCalls)}">
+                                        <td colspan="4" class="text-center text-muted py-3">Nessun appello disponibile
+                                            per la prenotazione.</td>
+                                    </tr>
+                                    <tr th:each="call : ${availableCalls}">
+                                        <td class="fw-semibold text-dark" th:text="${call.insegnamento.nome}">
+                                            Insegnamento</td>
+                                        <td th:text="${call.dataEsame}">Data</td>
+                                        <td th:text="${call.docente}">Docente</td>
+                                        <td class="text-center">
+                                            <form th:action="@{/student/book}" method="post" style="display:inline;">
+                                                <input type="hidden" name="callId" th:value="${call.id}">
+                                                <button type="submit" class="btn btn-primary btn-sm px-3 fw-semibold">
+                                                    Prenotati
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- COLONNA DESTRA: Le Mie Prenotazioni -->
+            <div class="col-lg-6">
+                <div class="card shadow-sm border-0 h-100">
+                    <div class="card-header bg-success text-white fw-bold d-flex align-items-center py-3">
+                        <span>📋 Le Mie Prenotazioni</span>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Insegnamento</th>
+                                        <th>Data Esame</th>
+                                        <th class="text-center">Stato</th>
+                                        <th class="text-center">Azione</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:if="${#lists.isEmpty(prenotazioni)}">
+                                        <td colspan="4" class="text-center text-muted py-3">Nessuna prenotazione attiva.
+                                        </td>
+                                    </tr>
+                                    <tr th:each="booking : ${prenotazioni}">
+                                        <td class="fw-semibold text-dark"
+                                            th:text="${booking.examCall.insegnamento.nome}">Materia</td>
+                                        <td th:text="${booking.examCall.dataEsame}">Data</td>
+                                        <td class="text-center">
+                                            <span th:if="${booking.stato == 'VERBALIZZATO'}"
+                                                class="badge bg-success px-3 py-2">✓ Verbalizzato</span>
+                                            <span th:if="${booking.stato == 'RIMANDATO'}"
+                                                class="badge bg-danger px-3 py-2">❌ Rimandato</span>
+                                            <span
+                                                th:if="${booking.stato == 'ATTESA_VERBALIZZAZIONE' or booking.stato == null}"
+                                                class="badge bg-warning text-dark px-3 py-2">⏳ In attesa</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <!-- Pulsante ANNULLA disponibile SOLO se in attesa ed appello aperto -->
+                                            <form
+                                                th:if="${!booking.examCall.chiuso and (booking.stato == 'ATTESA_VERBALIZZAZIONE' or booking.stato == null)}"
+                                                th:action="@{/student/cancel-booking}" method="post"
+                                                style="display:inline;">
+                                                <input type="hidden" name="bookingId" th:value="${booking.id}">
+                                                <button type="submit" class="btn btn-outline-danger btn-sm fw-semibold"
+                                                    onclick="return confirm('Sei sicuro di voler annullare questa prenotazione?');">
+                                                    Annulla
+                                                </button>
+                                            </form>
+
+                                            <!-- Se l'esame è VERBALIZZATO o RIMANDATO, la riga rimane bloccata nello storico -->
+                                            <span th:if="${booking.stato == 'VERBALIZZATO'}"
+                                                class="text-success small fw-bold">Archiviato</span>
+                                            <span th:if="${booking.stato == 'RIMANDATO'}"
+                                                class="text-muted small italic">Esame Concluso</span>
+                                            <span
+                                                th:if="${booking.examCall.chiuso and (booking.stato == 'ATTESA_VERBALIZZAZIONE' or booking.stato == null)}"
+                                                class="text-muted small italic">Appello Chiuso</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- Fine row -->
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+
+============================================================
+FILE: web-portal/target/classes/templates/admin-home.html
+============================================================
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart University - Area Amministratore</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f4f6f9; font-family: 'Segoe UI', sans-serif; }
+        .navbar { background-color: #1e293b !important; }
+        .card-custom { border: none; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark mb-4">
+    <div class="container">
+        <a class="navbar-brand fw-bold text-warning" href="#">Smart University - Pannello Admin ⚙️</a>
+        <div class="d-flex align-items-center">
+            <span class="text-white-50 me-3">Amministratore: <strong class="text-white" th:text="${username}">Admin</strong></span>
+            <a th:href="@{/logout}" class="btn btn-outline-danger btn-sm">Disconnetti</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        
+        <div class="col-12">
+            <div th:if="${success}" class="alert alert-success alert-dismissible fade show card-custom mb-4" role="alert">
+                <span th:text="${success}">Operazione completata!</span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <div th:if="${error}" class="alert alert-danger alert-dismissible fade show card-custom mb-4" role="alert">
+                <span th:text="${error}">Si è verificato un errore.</span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+
+        <!-- Sezione Registrazione Nuovo Utente -->
+        <div class="col-md-6 mb-4">
+            <div class="card card-custom p-4">
+                <h4 class="text-primary fw-bold mb-3">Registrazione Nuovo Utente</h4>
+                <p class="text-muted small">Crea credenziali sicure e profili anagrafici tra i microservizi.</p>
+                <hr>
+                
+                <form th:action="@{/admin/register-user}" method="post">
+                    <div class="mb-3">
+                        <label for="newUsername" class="form-label fw-semibold">Username</label>
+                        <input type="text" class="form-control" id="newUsername" name="newUsername" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="newPassword" class="form-label fw-semibold">Password</label>
+                        <input type="password" class="form-control" id="newPassword" name="newPassword" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="newRole" class="form-label fw-semibold">Ruolo Utente</label>
+                        <select class="form-select text-primary fw-semibold" id="newRole" name="newRole" onchange="toggleStudentFields()" required>
+                            <option value="DOCENTE">Docente</option>
+                            <option value="STUDENTE">Studente</option>
+                            <option value="ADMIN">Amministratore (Admin)</option>
+                        </select>
+                    </div>
+
+                    <!-- Campi Studente Dinamici -->
+                    <div id="studentFields" style="display: none; border-left: 3px solid #0d6efd; padding-left: 15px;">
+                        <h6 class="text-primary fw-bold mb-3">Dati Anagrafici Studente</h6>
+                        <div class="mb-2">
+                            <label class="form-label small fw-semibold">Nome</label>
+                            <input type="text" class="form-control form-control-sm" name="nome">
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label small fw-semibold">Cognome</label>
+                            <input type="text" class="form-control form-control-sm" name="cognome">
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label small fw-semibold">Matricola</label>
+                            <input type="text" class="form-control form-control-sm" name="matricola">
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label small fw-semibold">Email di Ateneo</label>
+                            <input type="email" class="form-control form-control-sm" name="email">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-semibold">Corso di Laurea</label>
+                            <input type="text" class="form-control form-control-sm" name="corsoDiLaurea">
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2 mt-4">
+                        <button type="submit" class="btn btn-primary fw-semibold">Crea Account e Profilo</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Sezione Attivazione Insegnamenti -->
+        <div class="col-md-6 mb-4">
+            <div class="card card-custom p-4">
+                <h4 class="text-success fw-bold mb-3">Attivazione Insegnamento</h4>
+                <p class="text-muted small">Crea un nuovo corso d'insegnamento ufficiale e assegna il docente di ruolo.</p>
+                <hr>
+                
+                <form th:action="@{/admin/create-course}" method="post">
+                    <div class="mb-3">
+                        <label for="codice" class="form-label fw-semibold">Codice Corso</label>
+                        <input type="text" class="form-control" id="codice" name="codice" placeholder="es. INF-01" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nome" class="form-label fw-semibold">Nome Insegnamento</label>
+                        <input type="text" class="form-control" id="nome" name="nome" placeholder="es. Ingegneria dei Sistemi Distribuiti" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="docente" class="form-label fw-semibold">Docente Responsabile (Username)</label>
+                        <input type="text" class="form-control" id="docente" name="docente" placeholder="es. prof.tramontana" required>
+                    </div>
+                    <div class="d-grid gap-2 mt-4">
+                        <button type="submit" class="btn btn-success fw-semibold">Attiva Insegnamento</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function toggleStudentFields() {
+        const role = document.getElementById('newRole').value;
+        const container = document.getElementById('studentFields');
+        const inputs = container.querySelectorAll('input');
+        if (role === 'STUDENTE') {
+            container.style.display = 'block';
+            inputs.forEach(i => i.required = true);
+        } else {
+            container.style.display = 'none';
+            inputs.forEach(i => { i.required = false; i.value = ''; });
+        }
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+============================================================
+FILE: auth-service/src/main/java/it/unict/smartuniversity/auth_service/AuthServiceApplication.java
+============================================================
+
+package it.unict.smartuniversity.auth_service;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class AuthServiceApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(AuthServiceApplication.class, args);
+	}
+
+}
+
+
+============================================================
+FILE: auth-service/src/main/java/it/unict/smartuniversity/auth_service/repository/UserRepository.java
+============================================================
+
+package it.unict.smartuniversity.auth_service.repository;
+
+import it.unict.smartuniversity.auth_service.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import java.util.Optional;
+
+@Repository
+public interface UserRepository extends JpaRepository<User, Long> {
+    // Metodo per cercare un utente tramite username (utile per il login)
+    Optional<User> findByUsername(String username);
+}
+
+============================================================
+FILE: auth-service/src/main/java/it/unict/smartuniversity/auth_service/service/AuthService.java
+============================================================
+
+package it.unict.smartuniversity.auth_service.service;
+
+import com.lambdaworks.crypto.SCryptUtil;
+import it.unict.smartuniversity.auth_service.model.User;
+import it.unict.smartuniversity.auth_service.model.Role;
+import it.unict.smartuniversity.auth_service.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.Optional;
+
+@Service
+public class AuthService {
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private JwtService jwtService; // Iniettiamo il servizio JWT
+
+    /**
+     * Registra un nuovo utente cifrando la password tramite Scrypt.
+     */
+    public User register(String username, String password, Role role) {
+        if (userRepository.findByUsername(username).isPresent()) {
+            throw new RuntimeException("Username già esistente!");
+        }
+
+        String passwordHash = SCryptUtil.scrypt(password, 32768, 8, 1);
+
+        User newUser = new User();
+        newUser.setUsername(username);
+        newUser.setPassword(passwordHash);
+        newUser.setRole(role);
+
+        return userRepository.save(newUser);
+    }
+
+    /**
+     * Effettua il login dell'utente. Se le credenziali sono corrette,
+     * genera e restituisce un Token JWT (Proof of Identity).
+     */
+    public String login(String username, String password) {
+        Optional<User> userOpt = userRepository.findByUsername(username);
+        
+        if (userOpt.isPresent() && SCryptUtil.check(password, userOpt.get().getPassword())) {
+            // Se le credenziali sono corrette, generiamo il Token JWT
+            return jwtService.generateToken(username, userOpt.get().getRole());
+        }
+        
+        throw new RuntimeException("Credenziali errate!");
+    }
+
+    /**
+     * Verifica le credenziali dell'utente (usato per debug o test veloci).
+     */
+    public boolean verifyCredentials(String username, String password) {
+        Optional<User> userOpt = userRepository.findByUsername(username);
+        if (userOpt.isEmpty()) {
+            return false;
+        }
+        return SCryptUtil.check(password, userOpt.get().getPassword());
+    }
+}
+
+============================================================
+FILE: auth-service/src/main/java/it/unict/smartuniversity/auth_service/service/JwtService.java
+============================================================
+
+package it.unict.smartuniversity.auth_service.service;
+
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.algorithms.Algorithm;
+import com.auth0.jwt.interfaces.DecodedJWT;
+import com.auth0.jwt.interfaces.JWTVerifier;
+import it.unict.smartuniversity.auth_service.model.Role;
+import org.springframework.stereotype.Service;
+
+import java.util.Date;
+
+@Service
+public class JwtService {
+
+    // Chiave segreta utilizzata per firmare il token (tienila al sicuro!)
+    private static final String SECRET_KEY = "SmartUniversitySuperSecretKeyForJWT";
+    private static final String ISSUER = "auth-service";
+    
+    // Il token scadrà dopo 1 ora (3600 secondi)
+    private static final long EXPIRATION_TIME = 3600_000; 
+
+    private final Algorithm algorithm = Algorithm.HMAC256(SECRET_KEY);
+
+    /**
+     * Genera un JWT Token firmato contenente username e ruolo dell'utente.
+     */
+    public String generateToken(String username, Role role) {
+        return JWT.create()
+                .withIssuer(ISSUER) // Chi emette il token (iss)
+                .withSubject(username) // L'utente identificato (sub)
+                .withClaim("role", role.name()) // Ruolo dell'utente per il controllo RBAC
+                .withIssuedAt(new Date()) // Data di generazione (iat)
+                .withExpiresAt(new Date(System.currentTimeMillis() + EXPIRATION_TIME)) // Scadenza (exp)
+                .sign(algorithm); // Firma crittografica del token
+    }
+
+    /**
+     * Verifica la validità di un JWT Token.
+     * Lancia un'eccezione se il token è alterato o scaduto.
+     */
+    public DecodedJWT verifyToken(String token) {
+        JWTVerifier verifier = JWT.require(algorithm)
+                .withIssuer(ISSUER)
+                .build();
+        return verifier.verify(token); // Esegue il controllo crittografico
+    }
+}
+
+============================================================
+FILE: auth-service/src/main/java/it/unict/smartuniversity/auth_service/controller/AuthController.java
+============================================================
+
+package it.unict.smartuniversity.auth_service.controller;
+
+import it.unict.smartuniversity.auth_service.model.User;
+import it.unict.smartuniversity.auth_service.model.Role;
+import it.unict.smartuniversity.auth_service.service.AuthService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
+
+@RestController
+@RequestMapping("/api/auth")
+public class AuthController {
+
+    @Autowired
+    private AuthService authService;
+
+    /**
+     * Endpoint per registrare un nuovo utente.
+     * Riceve un JSON con username, password e ruolo.
+     */
+    @PostMapping("/register")
+    public ResponseEntity<?> register(@RequestBody Map<String, String> request) {
+        try {
+            String username = request.get("username");
+            String password = request.get("password");
+            
+            // Converte la stringa del ruolo in Enum (STUDENTE, DOCENTE, ADMIN)
+            Role role = Role.valueOf(request.get("role").toUpperCase());
+
+            User registeredUser = authService.register(username, password, role);
+            
+            return ResponseEntity.ok(Map.of(
+                "message", "Utente registrato con successo!",
+                "id", registeredUser.getId(),
+                "username", registeredUser.getUsername(),
+                "role", registeredUser.getRole()
+            ));
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(Map.of("error", "Ruolo non valido! Usa STUDENTE, DOCENTE o ADMIN."));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
+        }
+    }
+
+    /**
+     * Endpoint ufficiale per il login.
+     * Restituisce il token JWT se le credenziali sono corrette.
+     */
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody Map<String, String> request) {
+        try {
+            String username = request.get("username");
+            String password = request.get("password");
+
+            String token = authService.login(username, password);
+            return ResponseEntity.ok(Map.of(
+                "message", "Login effettuato con successo!",
+                "token", token
+            ));
+        } catch (Exception e) {
+            return ResponseEntity.status(401).body(Map.of("error", e.getMessage()));
+        }
+    }
+}
+
+============================================================
+FILE: auth-service/src/main/java/it/unict/smartuniversity/auth_service/model/Role.java
+============================================================
+
+package it.unict.smartuniversity.auth_service.model;
+
+/**
+ * Rappresenta i ruoli predefiniti nel sistema secondo il pattern RBAC.
+ */
+
+public enum Role {
+    ADMIN,
+    DOCENTE,
+    STUDENTE
+}   
+
+
+============================================================
+FILE: auth-service/src/main/java/it/unict/smartuniversity/auth_service/model/User.java
+============================================================
+
+package it.unict.smartuniversity.auth_service.model;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+
+@Entity
+@Table(name = "users") // Mappa la classe sulla tabella 'users' in PostgreSQL
+@Data // Genera getter, setter, toString, equals e hashCode (Lombok)
+@NoArgsConstructor // Costruttore vuoto richiesto da JPA
+@AllArgsConstructor // Costruttore con tutti i campi
+public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false, unique = true)
+    private String username;
+
+    // Rappresenta l'AuthenticationInfo (la password hashata con Scrypt) [4, 5]
+    @Column(nullable = false, name = "password_hash")
+    private String password;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Role role; // Il ruolo RBAC assegnato all'utente [3]
+}
+
+============================================================
+FILE: auth-service/src/test/java/it/unict/smartuniversity/auth_service/AuthServiceApplicationTests.java
+============================================================
+
+package it.unict.smartuniversity.auth_service;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class AuthServiceApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
+
+
+============================================================
+FILE: student-service/src/main/java/it/unict/smartuniversity/student_service/StudentServiceApplication.java
+============================================================
+
+package it.unict.smartuniversity.student_service;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class StudentServiceApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(StudentServiceApplication.class, args);
+	}
+
+}
+
+
+============================================================
+FILE: student-service/src/main/java/it/unict/smartuniversity/student_service/WebConfig.java
+============================================================
+
+package it.unict.smartuniversity.student_service;
+
+import it.unict.smartuniversity.student_service.security.JwtInterceptor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+public class WebConfig implements WebMvcConfigurer {
+
+    @Autowired
+    private JwtInterceptor jwtInterceptor;
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        // Applica il Reference Monitor (JwtInterceptor) a tutte le rotte che iniziano con /api/
+        registry.addInterceptor(jwtInterceptor)
+                .addPathPatterns("/api/**");
+    }
+}
+
+============================================================
+FILE: student-service/src/main/java/it/unict/smartuniversity/student_service/listener/GradeListener.java
+============================================================
+
+package it.unict.smartuniversity.student_service.listener;
+
+import it.unict.smartuniversity.student_service.dto.GradeEvent;
+import it.unict.smartuniversity.student_service.service.StudentService;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class GradeListener {
+
+    @Autowired
+    private StudentService studentService;
+
+    @RabbitListener(queues = "student-grade-queue")
+    public void handleGradeRecorded(GradeEvent event) {
+        System.out.println("====== CONSUMER: Ricevuto nuovo evento voto da RabbitMQ! ======");
+        System.out.println("Esame: " + event.getNomeInsegnamento() + " | Voto: " + event.getVoto() + " | Studente: " + event.getMatricola());
+
+        try {
+            // Delega a StudentService che scarta i voti < 18 (Rimandato) ed applica l'Idempotent Receiver
+            studentService.saveGradeFromEvent(event);
+            System.out.println("====== CONSUMER: Elaborazione evento completata! ======");
+        } catch (Exception e) {
+            System.err.println("❌ Errore durante l'elaborazione asincrona del voto: " + e.getMessage());
+        }
+    }
+}
+
+
+============================================================
+FILE: student-service/src/main/java/it/unict/smartuniversity/student_service/repository/GradeRepository.java
+============================================================
+
+package it.unict.smartuniversity.student_service.repository;
+
+import it.unict.smartuniversity.student_service.model.Grade;
+import it.unict.smartuniversity.student_service.model.Student;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import java.util.List;
+
+@Repository
+public interface GradeRepository extends JpaRepository<Grade, Long> {
+    // Questo metodo permette di cercare tutti i voti appartenenti a un determinato studente
+    List<Grade> findByStudent(Student student);
+    boolean existsByStudentAndNomeInsegnamento(Student student, String nomeInsegnamento);
+}
+
+
+============================================================
+FILE: student-service/src/main/java/it/unict/smartuniversity/student_service/repository/StudentRepository.java
+============================================================
+
+package it.unict.smartuniversity.student_service.repository;
+
+import it.unict.smartuniversity.student_service.model.Student;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import java.util.Optional;
+
+@Repository
+public interface StudentRepository extends JpaRepository<Student, Long> {
+    Optional<Student> findByUsername(String username);
+    Optional<Student> findByMatricola(String matricola); // <-- DICHIARAZIONE DEL METODO MANCANTE
+}
+
+
+============================================================
+FILE: student-service/src/main/java/it/unict/smartuniversity/student_service/dto/GradeDTO.java
+============================================================
+
+package it.unict.smartuniversity.student_service.dto;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import java.io.Serializable;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class GradeDTO implements Serializable {
+    private static final long serialVersionUID = 1L;
+
+    private String nomeInsegnamento;
+    private Integer voto;
+    private Boolean lode;
+    private String docente;
+}
+
+============================================================
+FILE: student-service/src/main/java/it/unict/smartuniversity/student_service/dto/GradeEvent.java
+============================================================
+
+package it.unict.smartuniversity.student_service.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class GradeEvent {
+    private String matricola;
+    private String nomeInsegnamento;
+    private int voto;
+    private boolean lode;
+    private String docente;
+}
+
+============================================================
+FILE: student-service/src/main/java/it/unict/smartuniversity/student_service/config/RabbitMQConfig.java
+============================================================
+
+package it.unict.smartuniversity.student_service.config;
+
+import org.springframework.amqp.core.Queue;
+import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
+import org.springframework.amqp.support.converter.MessageConverter;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class RabbitMQConfig {
+
+    public static final String QUEUE_NAME = "student-grade-queue";
+
+    // Questo Bean dice a Spring di creare automaticamente la coda 
+    // su RabbitMQ se non esiste già al momento dell'avvio!
+    @Bean
+    public Queue studentGradeQueue() {
+        return new Queue(QUEUE_NAME, true); // durable = true (sopravvive al riavvio del broker)
+    }
+    
+    @Bean
+    public MessageConverter jsonMessageConverter() {
+        return new Jackson2JsonMessageConverter();
+    }
+}
+
+============================================================
+FILE: student-service/src/main/java/it/unict/smartuniversity/student_service/security/JwtInterceptor.java
+============================================================
+
+package it.unict.smartuniversity.student_service.security;
+
+import com.auth0.jwt.interfaces.DecodedJWT;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.HandlerInterceptor;
+
+@Component
+public class JwtInterceptor implements HandlerInterceptor {
+
+    @Autowired
+    private JwtValidator jwtValidator;
+
+    @Override
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        // 1. Permetti le richieste di pre-flight CORS (opzionali per il browser)
+        if ("OPTIONS".equalsIgnoreCase(request.getMethod())) {
+            return true;
+        }
+
+        // 2. Estrai l'header di Autorizzazione
+        String authHeader = request.getHeader("Authorization");
+        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            response.getWriter().write("{\"error\": \"Token mancante o non valido! Richiesto Bearer Token.\"}");
+            response.setContentType("application/json");
+            return false; // Blocca la richiesta (il Reference Monitor nega l'accesso)
+        }
+
+        // Estrae il token effettivo saltando i primi 7 caratteri ("Bearer ")
+        String token = authHeader.substring(7);
+
+        try {
+            // 3. Valida il token crittograficamente
+            DecodedJWT jwt = jwtValidator.validateAndDecode(token);
+
+            // 4. Salva i dati estratti dal token nella richiesta, così il controller potrà usarli
+            request.setAttribute("username", jwt.getSubject());
+            request.setAttribute("role", jwt.getClaim("role").asString());
+
+            return true; // Token valido, inoltra la richiesta al Controller protetto
+        } catch (Exception e) {
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            response.getWriter().write("{\"error\": \"Token non valido o scaduto: " + e.getMessage() + "\"}");
+            response.setContentType("application/json");
+            return false; // Blocca la richiesta
+        }
+    }
+}
+
+============================================================
+FILE: student-service/src/main/java/it/unict/smartuniversity/student_service/security/JwtValidator.java
+============================================================
+
+package it.unict.smartuniversity.student_service.security;
+
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.algorithms.Algorithm;
+import com.auth0.jwt.interfaces.DecodedJWT;
+import com.auth0.jwt.interfaces.JWTVerifier;
+import org.springframework.stereotype.Component;
+
+@Component
+public class JwtValidator {
+    private static final String SECRET_KEY = "SmartUniversitySuperSecretKeyForJWT";
+    private static final String ISSUER = "auth-service";
+    private final Algorithm algorithm = Algorithm.HMAC256(SECRET_KEY);
+
+    public DecodedJWT validateAndDecode(String token) {
+        JWTVerifier verifier = JWT.require(algorithm)
+                .withIssuer(ISSUER)
+                .build();
+        return verifier.verify(token);
+    }
+}
+
+============================================================
+FILE: student-service/src/main/java/it/unict/smartuniversity/student_service/security/StudentGradeCacheAspect.java
+============================================================
+
+package it.unict.smartuniversity.student_service.security;
+
+import it.unict.smartuniversity.student_service.dto.GradeDTO;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
+@Aspect
+@Component
+public class StudentGradeCacheAspect {
+
+    // Cache thread-safe in-memory: associa a ciascuno username la lista dei suoi voti (libretto)
+    private static final Map<String, List<GradeDTO>> gradeCache = new ConcurrentHashMap<>();
+
+    /**
+     * Intercetta l'esecuzione del recupero voti per memorizzarli in cache.
+     * Pattern applicato: Cache Proxy / Aspect-Oriented Caching.
+     */
+    @Around("execution(* it.unict.smartuniversity.student_service.service.StudentService.getLibrettoByUsername(String)) && args(username)")
+    public Object cacheGrades(ProceedingJoinPoint joinPoint, String username) throws Throwable {
+        if (gradeCache.containsKey(username)) {
+            System.out.println("⚡ [AspectJ Cache] Hit! Restituisco il libretto dello studente '" + username + "' direttamente dalla cache.");
+            return gradeCache.get(username);
+        }
+
+        System.out.println("💾 [AspectJ Cache] Miss. Interrogo PostgreSQL per lo studente '" + username + "' e memorizzo il risultato.");
+        Object result = joinPoint.proceed();
+        
+        if (result instanceof List) {
+            gradeCache.put(username, (List<GradeDTO>) result);
+        }
+        return result;
+    }
+
+    /**
+     * Metodo pubblico per invalidare (svuotare) la cache di uno specifico studente.
+     * Invocato dal Listener di RabbitMQ quando arriva un nuovo voto!
+     */
+    public static void evictCacheForUser(String username) {
+        if (gradeCache.containsKey(username)) {
+            gradeCache.remove(username);
+            System.out.println("🗑️ [AspectJ Cache] Invalidazione (Eviction) della cache eseguita con successo per lo studente '" + username + "'.");
+        }
+    }
+}
+
+============================================================
+FILE: student-service/src/main/java/it/unict/smartuniversity/student_service/service/StudentService.java
+============================================================
+
+package it.unict.smartuniversity.student_service.service;
+
+import it.unict.smartuniversity.student_service.dto.GradeDTO;
+import it.unict.smartuniversity.student_service.dto.GradeEvent;
+import it.unict.smartuniversity.student_service.model.Grade;
+import it.unict.smartuniversity.student_service.model.Student;
+import it.unict.smartuniversity.student_service.repository.GradeRepository;
+import it.unict.smartuniversity.student_service.repository.StudentRepository;
+import it.unict.smartuniversity.student_service.security.StudentGradeCacheAspect;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+public class StudentService {
+
+    @Autowired
+    private StudentRepository studentRepository;
+
+    @Autowired
+    private GradeRepository gradeRepository;
+
+    public Student createStudent(Student student) {
+        if (studentRepository.findByUsername(student.getUsername()).isPresent()) {
+            throw new RuntimeException("Uno studente con questo username esiste già!");
+        }
+        return studentRepository.save(student);
+    }
+
+    public Student getStudentByUsername(String username) {
+        return studentRepository.findByUsername(username)
+                .orElseThrow(() -> new RuntimeException("Studente non trovato per l'username: " + username));
+    }
+
+    public List<Student> getAllStudents() {
+        return studentRepository.findAll();
+    }
+
+    @Transactional(readOnly = true)
+    public List<GradeDTO> getLibrettoByUsername(String username) {
+        Student student = studentRepository.findByUsername(username)
+                .orElseThrow(() -> new RuntimeException("Studente non trovato per l'username: " + username));
+
+        List<Grade> grades = gradeRepository.findByStudent(student);
+
+        return grades.stream()
+                .map(grade -> new GradeDTO(
+                        grade.getNomeInsegnamento(),
+                        grade.getVoto(),
+                        grade.isLode(),
+                        grade.getDocente()
+                ))
+                .collect(Collectors.toList());
+    }
+
+    @Transactional
+    public void saveGradeFromEvent(GradeEvent event) {
+        // Se l'esame è "RIMANDATO" (voto < 18), ignoriamo il salvataggio nel libretto
+        if (event.getVoto() < 18) {
+            System.out.println("ℹ️ [StudentService] Esito 'RIMANDATO' per la matricola " 
+                    + event.getMatricola() + " (" + event.getNomeInsegnamento() + "). Nessun voto aggiunto al libretto.");
+            
+            studentRepository.findByMatricola(event.getMatricola())
+                    .ifPresent(s -> StudentGradeCacheAspect.evictCacheForUser(s.getUsername()));
+            return;
+        }
+
+        Student student = studentRepository.findByMatricola(event.getMatricola())
+                .orElseThrow(() -> new RuntimeException("Studente non trovato per matricola: " + event.getMatricola()));
+
+        if (gradeRepository.existsByStudentAndNomeInsegnamento(student, event.getNomeInsegnamento())) {
+            System.out.println("⚠️ [Idempotent Receiver] Esame '" + event.getNomeInsegnamento() + "' già presente nel libretto.");
+            return;
+        }
+
+        Grade grade = new Grade();
+        grade.setStudent(student);
+        grade.setNomeInsegnamento(event.getNomeInsegnamento());
+        grade.setVoto(event.getVoto());
+        grade.setLode(event.isLode());
+        grade.setDocente(event.getDocente());
+
+        gradeRepository.save(grade);
+
+        StudentGradeCacheAspect.evictCacheForUser(student.getUsername());
+    }
+}
+
+
+============================================================
+FILE: student-service/src/main/java/it/unict/smartuniversity/student_service/controller/StudentController.java
+============================================================
+
+package it.unict.smartuniversity.student_service.controller;
+
+import it.unict.smartuniversity.student_service.dto.GradeDTO;
+import it.unict.smartuniversity.student_service.service.StudentService;
+import it.unict.smartuniversity.student_service.security.JwtValidator;
+import it.unict.smartuniversity.student_service.model.Student;
+import com.auth0.jwt.interfaces.DecodedJWT;
+import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Map;
+
+@RestController
+@RequestMapping("/api/students")
+public class StudentController {
+
+    @Autowired
+    private StudentService studentService;
+
+    @Autowired
+    private JwtValidator jwtValidator;
+
+    @PostMapping
+    public ResponseEntity<?> createStudent(@RequestBody Student student, HttpServletRequest request) {
+        String role = (String) request.getAttribute("role");
+        if (!"ADMIN".equalsIgnoreCase(role)) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                    .body(Map.of("error", "Accesso negato! Solo gli amministratori possono registrare nuove anagrafiche."));
+        }
+        try {
+            Student created = studentService.createStudent(student);
+            return ResponseEntity.status(HttpStatus.CREATED).body(created);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
+        }
+    }
+
+    /**
+     * NUOVO: Restituisce il profilo anagrafico dello studente attualmente loggato.
+     * Necessario per recuperare la matricola ed effettuare le prenotazioni in modo dinamico.
+     */
+    @GetMapping("/me")
+    public ResponseEntity<?> getMyProfile(HttpServletRequest request) {
+        String username = (String) request.getAttribute("username");
+        String role = (String) request.getAttribute("role");
+
+        if (!"STUDENTE".equalsIgnoreCase(role)) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                    .body(Map.of("error", "Accesso riservato agli studenti!"));
+        }
+
+        try {
+            Student student = studentService.getStudentByUsername(username);
+            return ResponseEntity.ok(student);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(Map.of("error", e.getMessage()));
+        }
+    }
+
+    @GetMapping("/me/grades")
+    public ResponseEntity<?> getMyGrades(@RequestHeader("Authorization") String authorizationHeader) {
+        if (authorizationHeader == null || !authorizationHeader.startsWith("Bearer ")) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body(Map.of("error", "Token mancante o non valido!"));
+        }
+        String token = authorizationHeader.substring(7);
+        try {
+            DecodedJWT decodedJWT = jwtValidator.validateAndDecode(token);
+            String role = decodedJWT.getClaim("role").asString();
+            if (role == null || !"STUDENTE".equalsIgnoreCase(role)) {
+                return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                        .body(Map.of("error", "Accesso negato!"));
+            }
+            String username = decodedJWT.getSubject();
+            List<GradeDTO> libretto = studentService.getLibrettoByUsername(username);
+            return ResponseEntity.ok(libretto);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body(Map.of("error", "Token scaduto! " + e.getMessage()));
+        }
+    }
+}
+
+============================================================
+FILE: student-service/src/main/java/it/unict/smartuniversity/student_service/model/Student.java
+============================================================
+
+package it.unict.smartuniversity.student_service.model;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+
+@Entity
+@Table(name = "students")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Student {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false, unique = true)
+    private String matricola;
+
+    @Column(nullable = false)
+    private String nome;
+
+    @Column(nullable = false)
+    private String cognome;
+
+    @Column(nullable = false, unique = true)
+    private String email;
+
+    @Column(nullable = false)
+    private String corsoDiLaurea;
+    
+    @Column(nullable = false, unique = true)
+    private String username; 
+
+    
+}
+
+============================================================
+FILE: student-service/src/main/java/it/unict/smartuniversity/student_service/model/Grade.java
+============================================================
+
+package it.unict.smartuniversity.student_service.model;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+
+@Entity
+@Table(name = "student_grades")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Grade {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
+    private String nomeInsegnamento;
+
+    @Column(nullable = false)
+    private int voto;
+
+    @Column(nullable = false)
+    private boolean lode;
+
+    @Column(nullable = false)
+    private String docente;
+
+    // Relazione con lo studente: ogni voto appartiene a uno specifico studente
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "student_id", nullable = false)
+    private Student student;
+}
+
+============================================================
+FILE: student-service/src/test/java/it/unict/smartuniversity/student_service/StudentServiceApplicationTests.java
+============================================================
+
+package it.unict.smartuniversity.student_service;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class StudentServiceApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}

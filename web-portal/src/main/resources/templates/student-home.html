@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart University - Portale Studente</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .navbar-custom {
+            background-color: #0d6efd;
+        }
+        .card-custom {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom mb-4">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">🎓 Smart University</a>
+        <div class="d-flex align-items-center text-white">
+            <span class="me-3">Studente: <strong th:text="${username}">Studente</strong></span>
+            <span class="badge bg-light text-primary me-3 fs-6">Ruolo: STUDENTE</span>
+            <a th:href="@{/logout}" class="btn btn-outline-light btn-sm fw-semibold">Logout</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <!-- BANNER DI FALLBACK (Attivato da Resilience4J) -->
+    <div class="row" th:if="${warning}">
+        <div class="col-12">
+            <div class="alert alert-warning alert-dismissible fade show card-custom mb-4" role="alert" style="border-left: 5px solid #ffc107;">
+                <h5 class="alert-heading fw-bold text-dark"><span class="me-2">⚠️</span>Servizio Carriere in Autotutela (Fallback Resiliente)</h5>
+                <p class="mb-0 text-dark" th:text="${warning}"></p>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div th:if="${success}" class="alert alert-success alert-dismissible fade show card-custom mb-4" role="alert">
+                <span th:text="${success}">Operazione completata!</span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <div th:if="${error}" class="alert alert-danger alert-dismissible fade show card-custom mb-4" role="alert">
+                <span th:text="${error}">Si è verificato un errore.</span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Appelli Disponibili (Mostra SOLO appelli APERTI e per materie NON SUPERATE) -->
+        <div class="col-md-6 mb-4">
+            <div class="card card-custom p-4">
+                <h4 class="text-primary fw-bold mb-3">Appelli d'Esame Disponibili</h4>
+                <p class="text-muted small">Prenotati agli appelli aperti per le materie che devi ancora superare.</p>
+                <hr>
+
+                <div class="table-responsive mt-2">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Insegnamento</th>
+                                <th>Data</th>
+                                <th class="text-center">Azione</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:if="${#lists.isEmpty(availableCalls)}">
+                                <td colspan="3" class="text-center text-muted py-3">Nessun appello disponibile.</td>
+                            </tr>
+                            <tr th:each="call : ${availableCalls}">
+                                <td class="fw-semibold text-dark" th:text="${call.insegnamento.nome}">Corso</td>
+                                <td th:text="${call.dataEsame}">Data</td>
+                                <td class="text-center">
+                                    <span th:if="${bookedCallIds != null and bookedCallIds.contains(call.id)}" 
+                                          class="badge bg-info text-dark px-3 py-2 fs-6">
+                                        ✓ Già Prenotato
+                                    </span>
+
+                                    <form th:if="${bookedCallIds == null or !bookedCallIds.contains(call.id)}" 
+                                          th:action="@{/student/book}" method="post">
+                                        <input type="hidden" name="callId" th:value="${call.id}">
+                                        <button type="submit" class="btn btn-primary btn-sm fw-semibold">Prenotati</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Le Mie Prenotazioni -->
+        <div class="col-md-6 mb-4">
+            <div class="card card-custom p-4">
+                <h4 class="text-success fw-bold mb-3">Le Mie Prenotazioni</h4>
+                <p class="text-muted small">Stato della prenotazione e della verbalizzazione in tempo reale.</p>
+                <hr>
+
+                <div class="table-responsive mt-2">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="table-success">
+                            <tr>
+                                <th>Insegnamento</th>
+                                <th>Data Esame</th>
+                                <th class="text-center">Stato Verbalizzazione</th>
+                                <th class="text-center">Azione</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:if="${#lists.isEmpty(prenotazioni)}">
+                                <td colspan="4" class="text-center text-muted py-3">Nessuna prenotazione attiva.</td>
+                            </tr>
+                            <tr th:each="booking : ${prenotazioni}">
+                                <td class="fw-semibold text-dark" th:text="${booking.examCall.insegnamento.nome}">Materia</td>
+                                <td th:text="${booking.examCall.dataEsame}">Data</td>
+                                <td class="text-center">
+                                    <!-- Gestione dello stato con th:switch per garantire la mutua esclusione -->
+                                    <div th:switch="${booking.stato}">
+                                        <span th:case="'VERBALIZZATO'" class="badge bg-success px-3 py-2">
+                                            ✓ Verbalizzato 
+                                        </span>
+                                        <span th:case="'RIMANDATO'" class="badge bg-danger px-3 py-2">
+                                            ❌ Rimandato
+                                        </span>
+                                        <span th:case="*" class="badge bg-warning text-dark px-3 py-2">
+                                            ⏳ In attesa di verbalizzazione
+                                        </span>
+                                    </div>
+                                </td>
+                                <td class="text-center">
+                                    <!-- Il tasto 'Annulla' viene mostrato SOLO per prenotazioni NON ancora verbalizzate e con appello APERTO -->
+                                    <form th:if="${!booking.verbalizzata and (booking.examCall.chiuso == null or !booking.examCall.chiuso)}" 
+                                          th:action="@{/student/cancel-booking}" method="post" style="display:inline;">
+                                        <input type="hidden" name="bookingId" th:value="${booking.id}">
+                                        <button type="submit" class="btn btn-outline-danger btn-sm fw-semibold" 
+                                                onclick="return confirm('Sei sicuro di voler cancellare questa prenotazione?');">
+                                            Annulla
+                                        </button>
+                                    </form>
+                                    <span th:if="${booking.verbalizzata or (booking.examCall.chiuso != null and booking.examCall.chiuso)}" 
+                                          class="text-muted small">-</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Libretto Universitario -->
+    <div class="row">
+        <div class="col-12 mb-4">
+            <div class="card card-custom p-4">
+                <h3 class="text-primary fw-bold mb-3">Il tuo Libretto Universitario</h3>
+                <p class="text-muted small">Esami verbalizzati tramite il sistema asincrono.</p>
+
+                <div class="table-responsive mt-3">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col" class="py-3">Insegnamento</th>
+                                <th scope="col" class="py-3">Docente Verbalizzante</th>
+                                <th scope="col" class="py-3 text-center">Esito / Voto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:if="${#lists.isEmpty(libretto)}">
+                                <td colspan="3" class="text-center text-muted py-4">Nessun esame verbalizzato (o servizio temporaneamente offline).</td>
+                            </tr>
+                            <tr th:each="grade : ${libretto}">
+                                <td class="fw-semibold text-dark" th:text="${grade.nomeInsegnamento}">Materia</td>
+                                <td th:text="${grade.docente}">Docente</td>
+                                <td class="text-center">
+                                    <span th:if="${grade.voto >= 18}" class="badge bg-success fs-6 px-3 py-2">
+                                        <span th:text="${grade.voto}">30</span>
+                                        <span th:if="${grade.lode}"> e Lode</span>
+                                    </span>
+                                    <span th:if="${grade.voto < 18}" class="badge bg-danger fs-6 px-3 py-2">
+                                        Rimandato
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

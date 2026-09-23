@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart University - Portale Docente</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8f9fa; }
+        .navbar-custom { background-color: #0d6efd; }
+        .card-custom { border: none; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom mb-4">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">🎓 Smart University</a>
+            <div class="d-flex align-items-center text-white">
+                <span class="me-3">Benvenuto, Prof. <strong th:text="${username}">Docente</strong></span>
+                <span class="badge bg-light text-primary me-3 fs-6">Ruolo: DOCENTE</span>
+                <a th:href="@{/logout}" class="btn btn-outline-light btn-sm fw-semibold">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div th:if="${success}" class="alert alert-success alert-dismissible fade show card-custom mb-4" role="alert">
+                    <span th:text="${success}">Operazione completata!</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <div th:if="${error}" class="alert alert-danger alert-dismissible fade show card-custom mb-4" role="alert">
+                    <span th:text="${error}">Si è verificato un errore.</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Programmazione Appelli d'Esame -->
+            <div class="col-md-5 mb-4">
+                <div class="card card-custom p-4">
+                    <h4 class="text-primary fw-bold mb-3">Pianifica Appello d'Esame</h4>
+                    <p class="text-muted small">Crea una sessione d'appello d'esame per i tuoi corsi.</p>
+                    <hr>
+
+                    <form th:action="@{/docente/create-call}" method="post">
+                        <div class="mb-3">
+                            <label for="insegnamentoId" class="form-label fw-semibold">Insegnamento</label>
+                            <select class="form-select" id="insegnamentoId" name="insegnamentoId" required>
+                                <option th:each="course : ${courses}" th:value="${course.id}" th:text="${course.codice + ' - ' + course.nome}"></option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="dataEsame" class="form-label fw-semibold">Data Esame</label>
+                            <input type="date" class="form-control" id="dataEsame" name="dataEsame" required>
+                        </div>
+                        <div class="d-grid gap-2 mt-4">
+                            <button type="submit" class="btn btn-primary fw-semibold">Crea e Pubblica Appello</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Registro Appelli Programmati -->
+            <div class="col-md-7 mb-4">
+                <div class="card card-custom p-4">
+                    <h4 class="text-dark fw-bold mb-3">I Tuoi Appelli Programmati</h4>
+                    <p class="text-muted small">Gestisci lo stato degli appelli ufficiali.</p>
+                    <hr>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Insegnamento</th>
+                                    <th>Data Esame</th>
+                                    <th>Stato</th>
+                                    <th class="text-center">Azione</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:if="${#lists.isEmpty(appelli)}">
+                                    <td colspan="4" class="text-center text-muted py-3">Nessun appello creato.</td>
+                                </tr>
+                                <tr th:each="call : ${appelli}">
+                                    <td class="fw-semibold text-dark" th:text="${call.insegnamento.nome}">Materia</td>
+                                    <td th:text="${call.dataEsame}">Data</td>
+                                    <td>
+                                        <span th:if="${call.chiuso}" class="badge bg-secondary px-2 py-1">Chiuso</span>
+                                        <span th:if="${!call.chiuso}" class="badge bg-success px-2 py-1">Aperto</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <form th:if="${!call.chiuso}" th:action="@{/docente/close-call}" method="post" style="display:inline;">
+                                            <input type="hidden" name="callId" th:value="${call.id}">
+                                            <button type="submit" class="btn btn-warning btn-sm fw-semibold">Chiudi Appello</button>
+                                        </form>
+                                        <span th:if="${call.chiuso}" class="text-muted small italic">Iscrizioni Chiuse</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sezione Verbalizzazione Guidata (Solo Studenti Prenotati) -->
+        <div class="row">
+            <div class="col-12 mb-4">
+                <div class="card card-custom p-4">
+                    <h4 class="text-success fw-bold mb-3">Verbalizzazione Esami (Studenti Prenotati)</h4>
+                    <p class="text-muted small">Seleziona l'esito per ciascun candidato iscritto agli appelli ufficiali.</p>
+                    <hr>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Matricola Studente</th>
+                                    <th>Insegnamento</th>
+                                    <th>Data Appello</th>
+                                    <th class="text-center">Azione Verbalizzazione</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:if="${#lists.isEmpty(pendingBookings)}">
+                                    <td colspan="4" class="text-center text-muted py-4">Nessuna prenotazione pendente da verbalizzare.</td>
+                                </tr>
+                                <tr th:each="b : ${pendingBookings}">
+                                    <td class="fw-bold text-primary" th:text="${b.matricola}">M81001234</td>
+                                    <td class="fw-semibold" th:text="${b.examCall.insegnamento.nome}">Materia</td>
+                                    <td th:text="${b.examCall.dataEsame}">Data</td>
+                                    <td>
+                                        <form th:action="@{/docente/verbalizza}" method="post" class="d-flex align-items-center justify-content-center gap-2">
+                                            <input type="hidden" name="bookingId" th:value="${b.id}">
+
+                                            <select name="esito" class="form-select form-select-sm w-auto" 
+                                                    th:id="'esitoSelect-' + ${b.id}" 
+                                                    th:onchange="'toggleGradeInputs(' + ${b.id} + ')'" required>
+                                                <option value="PROMOSSO" selected>Promosso</option>
+                                                <option value="RIMANDATO">Rimandato</option>
+                                            </select>
+
+                                            <input type="number" name="voto" class="form-control form-control-sm" style="width: 80px;" 
+                                                   th:id="'votoInput-' + ${b.id}" min="18" max="30" value="18" 
+                                                   th:onchange="'toggleLodeCheckbox(' + ${b.id} + ')'" required>
+
+                                            <div class="form-check me-2" th:id="'lodeBox-' + ${b.id}">
+                                                <input class="form-check-input" type="checkbox" name="lode" value="true" th:id="'lodeCheck-' + ${b.id}" disabled>
+                                                <label class="form-check-label small" th:for="'lodeCheck-' + ${b.id}">Lode</label>
+                                            </div>
+
+                                            <button type="submit" class="btn btn-success btn-sm fw-semibold">Verbalizza</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    function toggleGradeInputs(id) {
+        const esito = document.getElementById('esitoSelect-' + id).value;
+        const votoInput = document.getElementById('votoInput-' + id);
+        const lodeCheck = document.getElementById('lodeCheck-' + id);
+
+        if (esito === 'RIMANDATO') {
+            votoInput.value = '';
+            votoInput.disabled = true;
+            votoInput.required = false;
+            lodeCheck.checked = false;
+            lodeCheck.disabled = true;
+        } else {
+            votoInput.disabled = false;
+            votoInput.required = true;
+            votoInput.value = '18';
+            toggleLodeCheckbox(id);
+        }
+    }
+
+    function toggleLodeCheckbox(id) {
+        const votoInput = document.getElementById('votoInput-' + id);
+        const lodeCheck = document.getElementById('lodeCheck-' + id);
+        if (parseInt(votoInput.value) === 30) {
+            lodeCheck.disabled = false;
+        } else {
+            lodeCheck.checked = false;
+            lodeCheck.disabled = true;
+        }
+    }
+    </script>
+</body>
+</html>
